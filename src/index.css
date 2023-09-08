@@ -13,6 +13,10 @@ code {
     monospace;
 }
 
+h1,p,h2,h3{
+  margin: 0px;
+}
+
 
 .completeSpace {
   width: 100%;
@@ -41,4 +45,10 @@ code {
   display: flex;
   justify-content: flex-end;
   align-items: end;
+}
+
+.topLeft{
+  display: flex;
+  justify-content: flex-start;
+  align-items: start;
 }

@@ -14,10 +14,9 @@ const CSSMapper = (row: any) => {
     fontStyle: row["Font.italic"] ? "italic" : "normal",
     lineHeight: `${row["attributes.LineHeight"]}px` || "normal",
     textAlign: `${row["attributes.TextAlign"]}px` || "left",
-    marginBottom: `${row["attributes.SpaceAfter"]}px`,
     // border:"1px dotted red",
     zIndex:"40",
-    cursor:"pointer"
+    height:"100%",
   };
 
   return inlineStyle;
