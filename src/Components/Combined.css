@@ -1,0 +1,67 @@
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #C1D6E9; /* #C1D6E9; */
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+  
+
+  h1,h2{
+    color:#05314D
+  }
+
+  a{
+    color:#88B5D0;
+    text-decoration: none;
+  }
+
+  
+.item {
+  padding: 2px;
+  /* border: 1px solid #ccc; */
+  margin: 4px 5px;
+  font-size: 13px;
+  /* background-color: #f0f0f0; */
+}
+
+.child {
+  /* background-color: #e0e0e0; */
+  border-bottom: 1px solid #fff;
+}
+
+.parent{
+  border-left: 1px solid #fff;
+}
+
+.item_sec {
+  padding-Left: 3px;
+  font-size: 13px;
+}
+
+.selected{
+  border: 1px dotted red;
+  box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.child_sec {
+  border-bottom: 1px dotted #49637C;
+  z-index: 50;
+}
+
+.parent_sec{
+  border-left: 1px dotted #49637C;
+  z-index: 25;
+}
