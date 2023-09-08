@@ -23,38 +23,38 @@ const getTag = (props: any) => {
     case "paragraphspan":
     case "sub":
       return (
-        <div style={CSS} >
+        <div style={CSS} contentEditable>
           {Text}
         </div>
       );
     case "div":
       return (
-        <div style={CSS} >
+        <div style={CSS} contentEditable >
           {Text}
         </div>
       );
     case "h1":
       return (
-        <h1 style={CSS} >
+        <h1 style={CSS} contentEditable >
           {Text}
         </h1>
       );
     case "h2":
       return (
-        <h2 style={CSS} >
+        <h2 style={CSS} contentEditable >
           {Text}
         </h2>
       );
     case "h3":
       return (
-        <h2 style={CSS} >
+        <h2 style={CSS} contentEditable >
           {Text}
         </h2>
       );
     case "reference":
       return (
         <>
-          <a href="#" style={CSS}>
+          <a href="#" style={CSS} contentEditable>
             {Text}
           </a>
           <br />
@@ -63,14 +63,14 @@ const getTag = (props: any) => {
     case "lbl":
     case "span":
       return (
-        <span style={CSS} >
+        <span style={CSS} contentEditable >
           {Text}
         </span>
       );
     default:
       if (pattern.test(tagName)) {
         return (
-          <p style={CSS} >
+          <p style={CSS} contentEditable >
             {Text}
           </p>
         );
@@ -135,7 +135,7 @@ export const HtmlTagMapper = (props: any) => {
       </div>
 
       
-      <div className="centerTop" style={{ width: "90%", height: "100%" }}>{tag}</div>
+      <div className="centerTop" style={{ width: "90%", height: "100%" }}> {tag}</div>
     </div>
   );
 };

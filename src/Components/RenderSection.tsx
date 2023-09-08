@@ -12,29 +12,43 @@ const getChild: any = (data: any, checkId: any) => {
 };
 
 const RenderSection = (props: any) => {
-  const { data, expanded, children, parentId, handleClose, handleOpen } = props;
-
-  function handleDragDrop(result: any) {
-    console.log(result);
-  }
+  const {
+    data,
+    expanded,
+    children,
+    parentId,
+    handleClose,
+    handleOpen,
+    handleDragDrop,
+  } = props;
 
   return (
     <>
       {parentId === -1 ? (
         <DragDropContext
           onDragEnd={handleDragDrop}
-          onDragStart={(event: any) => handleClose(`${event.draggableId}`)}
+          onDragStart={(event: any) => {
+            handleClose(`${event.draggableId}`);
+          }}
         >
           <Droppable droppableId={`area${parentId}`} type="group">
-            {(provided: any) => (
-              <CommonDropable props={props} provided={provided} />
+            {(provided: any, snapshot: any) => (
+              <CommonDropable
+                props={props}
+                provided={provided}
+                snapshot={snapshot}
+              />
             )}
           </Droppable>
         </DragDropContext>
       ) : (
         <Droppable droppableId={`area${parentId}`} type="group">
-          {(provided: any) => (
-            <CommonDropable props={props} provided={provided} />
+          {(provided: any, snapshot: any) => (
+            <CommonDropable
+              props={props}
+              provided={provided}
+              snapshot={snapshot}
+            />
           )}
         </Droppable>
       )}
@@ -43,7 +57,7 @@ const RenderSection = (props: any) => {
 };
 
 const CommonDropable = (props: any) => {
-  const { provided } = props;
+  const { provided, snapshot } = props;
   const {
     data,
     expanded,
@@ -52,6 +66,7 @@ const CommonDropable = (props: any) => {
     handleClose,
     handleOpen,
     handleClick,
+    handleDragDrop,
   } = props.props;
 
   return (
@@ -59,7 +74,10 @@ const CommonDropable = (props: any) => {
       <div
         {...provided.dropableProps}
         ref={provided.innerRef}
-        style={{ paddingBottom: "5px" }}
+        style={{
+          paddingBottom: "5px",
+          backgroundColor: `${snapshot.isDraggingOver ? "#E7FFEC" : ""}`,
+        }}
       >
         {children.map((row: any, index: any) => {
           return (
@@ -68,7 +86,7 @@ const CommonDropable = (props: any) => {
               draggableId={`section${row.pdf_row_id}`}
               index={index}
             >
-              {(provided: any) => (
+              {(provided: any, snapshot: any) => (
                 <div
                   {...provided.draggableProps}
                   ref={provided.innerRef}
@@ -81,6 +99,9 @@ const CommonDropable = (props: any) => {
                       ? "child_sec"
                       : ""
                   }`}
+                  // style={{
+                  //   backgroundColor: `${snapshot.isDragging ? "red" : ""}`,
+                  // }}
                 >
                   <HtmlTagMapper
                     row={row}
@@ -102,6 +123,7 @@ const CommonDropable = (props: any) => {
                       handleOpen={handleOpen}
                       parentId={row.pdf_row_id}
                       handleClick={handleClick}
+                      handleDragDrop={handleDragDrop}
                     />
                   ) : null}
                 </div>

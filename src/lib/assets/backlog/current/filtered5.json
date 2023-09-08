@@ -1,0 +1,2823 @@
+[
+  {
+    "toc_id": 1,
+    "level": 1,
+    "content": "Fannie Mae Single Family Servicing Guide",
+    "page_no": 1,
+    "parent_toc_id": -1
+  },
+  {
+    "toc_id": 2,
+    "level": 1,
+    "content": "Table of Contents",
+    "page_no": 3,
+    "parent_toc_id": -1
+  },
+  {
+    "toc_id": 3,
+    "level": 1,
+    "content": "Preface",
+    "page_no": 11,
+    "parent_toc_id": -1
+  },
+  {
+    "toc_id": 4,
+    "level": 1,
+    "content": "Part A, Doing Business with Fannie Mae",
+    "page_no": 15,
+    "parent_toc_id": -1
+  },
+  {
+    "toc_id": 5,
+    "level": 2,
+    "content": "Subpart A1, Contractual Obligations",
+    "page_no": 16,
+    "parent_toc_id": 4
+  },
+  {
+    "toc_id": 6,
+    "level": 3,
+    "content": "Chapter A1-1, Understanding the Lender Contract",
+    "page_no": 16,
+    "parent_toc_id": 5
+  },
+  {
+    "toc_id": 7,
+    "level": 4,
+    "content": "A1-1-01, Application and Approval of Seller/Servicer (11/13/2019)",
+    "page_no": 16,
+    "parent_toc_id": 6
+  },
+  {
+    "toc_id": 8,
+    "level": 4,
+    "content": "A1-1-02, Representation and Warranty Requirements (08/16/2017)",
+    "page_no": 17,
+    "parent_toc_id": 6
+  },
+  {
+    "toc_id": 9,
+    "level": 4,
+    "content": "A1-1-03, Evaluating a Servicer’s Performance (11/25/2015)",
+    "page_no": 19,
+    "parent_toc_id": 6
+  },
+  {
+    "toc_id": 10,
+    "level": 3,
+    "content": "Chapter A1-2, Termination of the Lender Contract without Cause",
+    "page_no": 22,
+    "parent_toc_id": 5
+  },
+  {
+    "toc_id": 11,
+    "level": 4,
+    "content": "A1-2-01, Servicer’s Termination of the Lender Contract (11/12/2014)",
+    "page_no": 23,
+    "parent_toc_id": 10
+  },
+  {
+    "toc_id": 12,
+    "level": 4,
+    "content": "A1-2-02, Fannie Mae’s Termination of the Lender Contract without Cause (11/12/2014)",
+    "page_no": 23,
+    "parent_toc_id": 10
+  },
+  {
+    "toc_id": 13,
+    "level": 3,
+    "content": "Chapter A1-3, Repurchases, Indemnifications, and Make Whole Payment Requests",
+    "page_no": 26,
+    "parent_toc_id": 5
+  },
+  {
+    "toc_id": 14,
+    "level": 4,
+    "content": "A1-3-01, Requirements for Voluntary Repurchase (10/13/2021)",
+    "page_no": 26,
+    "parent_toc_id": 13
+  },
+  {
+    "toc_id": 15,
+    "level": 4,
+    "content": "A1-3-02, Fannie Mae-Initiated Repurchases, Indemnifications, Make Whole Payment Requests and Deferred Payment Obligations (10/13/2021)",
+    "page_no": 29,
+    "parent_toc_id": 13
+  },
+  {
+    "toc_id": 16,
+    "level": 4,
+    "content": "A1-3-03, Repurchase Obligations Related to Bifurcated Mortgage Loans (02/15/2017)",
+    "page_no": 50,
+    "parent_toc_id": 13
+  },
+  {
+    "toc_id": 17,
+    "level": 4,
+    "content": "A1-3-04, Reporting the Repurchase (11/12/2014)",
+    "page_no": 59,
+    "parent_toc_id": 13
+  },
+  {
+    "toc_id": 18,
+    "level": 4,
+    "content": "A1-3-05, Redelivering a Mortgage Loan (11/12/2014)",
+    "page_no": 60,
+    "parent_toc_id": 13
+  },
+  {
+    "toc_id": 19,
+    "level": 4,
+    "content": "A1-3-06, Automatic Reclassification of MBS Mortgage Loans (10/13/2021)",
+    "page_no": 60,
+    "parent_toc_id": 13
+  },
+  {
+    "toc_id": 20,
+    "level": 4,
+    "content": "A1-3-07, Custodial Document Requirements (05/15/2019)",
+    "page_no": 62,
+    "parent_toc_id": 13
+  },
+  {
+    "toc_id": 21,
+    "level": 3,
+    "content": "Chapter A1-4, Breach of Contract and Nonperformance",
+    "page_no": 63,
+    "parent_toc_id": 5
+  },
+  {
+    "toc_id": 22,
+    "level": 4,
+    "content": "Section A1-4.1, Remedies Available to Fannie Mae",
+    "page_no": 63,
+    "parent_toc_id": 21
+  },
+  {
+    "toc_id": 23,
+    "level": 5,
+    "content": "A1-4.1-01, Defining a Breach of Contract (06/21/2017)",
+    "page_no": 63,
+    "parent_toc_id": 22
+  },
+  {
+    "toc_id": 24,
+    "level": 5,
+    "content": "A1-4.1-02, Fannie Mae’s Remedies (09/09/2020)",
+    "page_no": 65,
+    "parent_toc_id": 22
+  },
+  {
+    "toc_id": 25,
+    "level": 4,
+    "content": "Section A1-4.2, Imposition of Compensatory Fees",
+    "page_no": 69,
+    "parent_toc_id": 21
+  },
+  {
+    "toc_id": 26,
+    "level": 5,
+    "content": "A1-4.2-01, Compensatory Fees Other Than Delays in the Liquidation Process (07/14/2021)",
+    "page_no": 69,
+    "parent_toc_id": 25
+  },
+  {
+    "toc_id": 27,
+    "level": 5,
+    "content": "A1-4.2-02, Compensatory Fees for Delays in the Liquidation Process (02/13/2019)",
+    "page_no": 74,
+    "parent_toc_id": 25
+  },
+  {
+    "toc_id": 28,
+    "level": 2,
+    "content": "Subpart A2, Getting Started with Fannie Mae",
+    "page_no": 76,
+    "parent_toc_id": 4
+  },
+  {
+    "toc_id": 29,
+    "level": 3,
+    "content": "Chapter A2-1, Servicer Duties and Responsibilities",
+    "page_no": 76,
+    "parent_toc_id": 28
+  },
+  {
+    "toc_id": 30,
+    "level": 4,
+    "content": "A2-1-01, General Servicer Duties and Responsibilities (09/08/2021)",
+    "page_no": 77,
+    "parent_toc_id": 29
+  },
+  {
+    "toc_id": 31,
+    "level": 4,
+    "content": "A2-1-02, Servicer’s Duties and Responsibilities Related to MBS Mortgage Loans (12/09/2020)",
+    "page_no": 82,
+    "parent_toc_id": 29
+  },
+  {
+    "toc_id": 32,
+    "level": 4,
+    "content": "A2-1-03, Execution of Legal Documents (09/09/2020)",
+    "page_no": 86,
+    "parent_toc_id": 29
+  },
+  {
+    "toc_id": 33,
+    "level": 4,
+    "content": "A2-1-04, Note Holder Status for Legal Proceedings Conducted in the Servicer’s Name (06/21/2017)",
+    "page_no": 88,
+    "parent_toc_id": 29
+  },
+  {
+    "toc_id": 34,
+    "level": 4,
+    "content": "A2-1-05, Use of Fannie Mae Trademarks (08/16/2017)",
+    "page_no": 90,
+    "parent_toc_id": 29
+  },
+  {
+    "toc_id": 35,
+    "level": 4,
+    "content": "A2-1-06, Subservicing (12/08/2021)",
+    "page_no": 90,
+    "parent_toc_id": 29
+  },
+  {
+    "toc_id": 36,
+    "level": 4,
+    "content": "A2-1-07, First Lien Mortgage Loan Requirements (11/12/2014)",
+    "page_no": 95,
+    "parent_toc_id": 29
+  },
+  {
+    "toc_id": 37,
+    "level": 4,
+    "content": "A2-1-08, Compliance with Requirements and Laws (02/09/2022)",
+    "page_no": 99,
+    "parent_toc_id": 29
+  },
+  {
+    "toc_id": 38,
+    "level": 3,
+    "content": "Chapter A2-2, Refinance and Lending Practices",
+    "page_no": 99,
+    "parent_toc_id": 28
+  },
+  {
+    "toc_id": 39,
+    "level": 4,
+    "content": "A2-2-01, Refinance and Lending Practices (02/14/2018)",
+    "page_no": 100,
+    "parent_toc_id": 38
+  },
+  {
+    "toc_id": 40,
+    "level": 3,
+    "content": "Chapter A2-3, Servicer Compensation",
+    "page_no": 100,
+    "parent_toc_id": 28
+  },
+  {
+    "toc_id": 41,
+    "level": 4,
+    "content": "A2-3-01, Servicer Compensation (12/14/2016)",
+    "page_no": 100,
+    "parent_toc_id": 40
+  },
+  {
+    "toc_id": 42,
+    "level": 4,
+    "content": "A2-3-02, Servicing Fees for Portfolio and MBS Mortgage Loans (09/09/2020)",
+    "page_no": 103,
+    "parent_toc_id": 40
+  },
+  {
+    "toc_id": 43,
+    "level": 4,
+    "content": "A2-3-03, Yield Differential Adjustments (08/16/2017)",
+    "page_no": 104,
+    "parent_toc_id": 40
+  },
+  {
+    "toc_id": 44,
+    "level": 4,
+    "content": "A2-3-04, Late Charges as Compensation (12/11/2019)",
+    "page_no": 105,
+    "parent_toc_id": 40
+  },
+  {
+    "toc_id": 45,
+    "level": 4,
+    "content": "A2-3-05, Fees for Certain Servicing Activities (11/08/2017)",
+    "page_no": 106,
+    "parent_toc_id": 40
+  },
+  {
+    "toc_id": 46,
+    "level": 4,
+    "content": "A2-3-06, Prepayment Premiums (11/12/2014)",
+    "page_no": 108,
+    "parent_toc_id": 40
+  },
+  {
+    "toc_id": 47,
+    "level": 3,
+    "content": "Chapter A2-4, Fannie Mae’s Quality Control Review",
+    "page_no": 108,
+    "parent_toc_id": 28
+  },
+  {
+    "toc_id": 48,
+    "level": 4,
+    "content": "A2-4-01, Quality Control Reviews (08/17/2016)",
+    "page_no": 108,
+    "parent_toc_id": 47
+  },
+  {
+    "toc_id": 49,
+    "level": 3,
+    "content": "Chapter A2-5, Individual Mortgage Loan Files and Records",
+    "page_no": 114,
+    "parent_toc_id": 28
+  },
+  {
+    "toc_id": 50,
+    "level": 4,
+    "content": "A2-5-01, Ownership and Retention of Individual Mortgage Loan Files and Records (07/14/2021)",
+    "page_no": 114,
+    "parent_toc_id": 49
+  },
+  {
+    "toc_id": 51,
+    "level": 3,
+    "content": "Chapter A2-6, Custodial Documents",
+    "page_no": 115,
+    "parent_toc_id": 28
+  },
+  {
+    "toc_id": 52,
+    "level": 4,
+    "content": "A2-6-01, Custodial Documents (05/15/2019)",
+    "page_no": 115,
+    "parent_toc_id": 51
+  },
+  {
+    "toc_id": 53,
+    "level": 3,
+    "content": "Chapter A2-7, Servicing Transfers",
+    "page_no": 116,
+    "parent_toc_id": 28
+  },
+  {
+    "toc_id": 54,
+    "level": 4,
+    "content": "A2-7-01, Concurrent Servicing Transfers (05/11/2022)",
+    "page_no": 116,
+    "parent_toc_id": 53
+  },
+  {
+    "toc_id": 55,
+    "level": 4,
+    "content": "A2-7-02, Pledge of Servicing Rights and Transfer of Interest in Servicing Income (11/25/2015)",
+    "page_no": 119,
+    "parent_toc_id": 53
+  },
+  {
+    "toc_id": 56,
+    "level": 4,
+    "content": "A2-7-03, Post-Delivery Servicing Transfers (05/11/2022)",
+    "page_no": 125,
+    "parent_toc_id": 53
+  },
+  {
+    "toc_id": 57,
+    "level": 3,
+    "content": "Chapter A2-8, Mortgage Electronic Registration System",
+    "page_no": 138,
+    "parent_toc_id": 28
+  },
+  {
+    "toc_id": 58,
+    "level": 4,
+    "content": "A2-8-01, Mortgage Electronic Registration System (04/10/2019)",
+    "page_no": 138,
+    "parent_toc_id": 57
+  },
+  {
+    "toc_id": 59,
+    "level": 3,
+    "content": "Chapter A2-9, Mortgage Assignments to Fannie Mae",
+    "page_no": 139,
+    "parent_toc_id": 28
+  },
+  {
+    "toc_id": 60,
+    "level": 4,
+    "content": "A2-9-01, General Requirements (05/11/2022)",
+    "page_no": 139,
+    "parent_toc_id": 59
+  },
+  {
+    "toc_id": 61,
+    "level": 4,
+    "content": "A2-9-02, Special Provision for Puerto Rico (05/11/2022)",
+    "page_no": 140,
+    "parent_toc_id": 59
+  },
+  {
+    "toc_id": 62,
+    "level": 2,
+    "content": "Subpart A3, Maintaining Fannie Mae Seller/Servicer Status",
+    "page_no": 140,
+    "parent_toc_id": 4
+  },
+  {
+    "toc_id": 63,
+    "level": 3,
+    "content": "Chapter A3-1, Maintaining Fannie Mae Seller/Servicer Status",
+    "page_no": 141,
+    "parent_toc_id": 62
+  },
+  {
+    "toc_id": 64,
+    "level": 4,
+    "content": "A3-1-01, Maintaining Fannie Mae Seller/Servicer Status (05/11/2022)",
+    "page_no": 141,
+    "parent_toc_id": 63
+  },
+  {
+    "toc_id": 65,
+    "level": 2,
+    "content": "Subpart A4, Setting Up Servicer Operations",
+    "page_no": 142,
+    "parent_toc_id": 4
+  },
+  {
+    "toc_id": 66,
+    "level": 3,
+    "content": "Chapter A4-1, Establishing and Implementing Internal Operations for All Mortgage Loans and Acquired Properties",
+    "page_no": 142,
+    "parent_toc_id": 65
+  },
+  {
+    "toc_id": 67,
+    "level": 4,
+    "content": "A4-1-01, Staffing, Training, Procedures, and Quality Control Requirements (07/15/2020)",
+    "page_no": 142,
+    "parent_toc_id": 66
+  },
+  {
+    "toc_id": 68,
+    "level": 4,
+    "content": "A4-1-02, Establishing Custodial Bank Accounts (04/12/2017)",
+    "page_no": 151,
+    "parent_toc_id": 66
+  },
+  {
+    "toc_id": 69,
+    "level": 4,
+    "content": "A4-1-03, Addressing Borrower Inquiries and Disputes (12/12/2018)",
+    "page_no": 156,
+    "parent_toc_id": 66
+  },
+  {
+    "toc_id": 70,
+    "level": 3,
+    "content": "Chapter A4-2, Requirements for Delinquent Mortgage Loans and Mortgage Loans at Risk of Default",
+    "page_no": 159,
+    "parent_toc_id": 65
+  },
+  {
+    "toc_id": 71,
+    "level": 4,
+    "content": "Section A4-2.1, Establishing Default Management Strategies",
+    "page_no": 160,
+    "parent_toc_id": 70
+  },
+  {
+    "toc_id": 72,
+    "level": 5,
+    "content": "A4-2.1-01, Preventing Defaults and Managing Delinquencies (09/09/2020)",
+    "page_no": 160,
+    "parent_toc_id": 71
+  },
+  {
+    "toc_id": 73,
+    "level": 5,
+    "content": "A4-2.1-02, Property Inspection Vendor Management and Oversight (11/12/2014)",
+    "page_no": 162,
+    "parent_toc_id": 71
+  },
+  {
+    "toc_id": 74,
+    "level": 5,
+    "content": "A4-2.1-03, Managing Short Sales (06/21/2017)",
+    "page_no": 163,
+    "parent_toc_id": 71
+  },
+  {
+    "toc_id": 75,
+    "level": 5,
+    "content": "A4-2.1-04, Establishing Contact with the Borrower (12/16/2015)",
+    "page_no": 163,
+    "parent_toc_id": 71
+  },
+  {
+    "toc_id": 76,
+    "level": 5,
+    "content": "A4-2.1-05, Requirements for Collection and Foreclosure Prevention Strategies Unique to Second Lien Mortgage Loans (11/12/2014)",
+    "page_no": 165,
+    "parent_toc_id": 71
+  },
+  {
+    "toc_id": 77,
+    "level": 5,
+    "content": "A4-2.1-06, Adverse Action Notification Certification (06/10/2015)",
+    "page_no": 166,
+    "parent_toc_id": 71
+  },
+  {
+    "toc_id": 78,
+    "level": 4,
+    "content": "Section A4-2.2, Requirements for Default-Related Law Firms",
+    "page_no": 166,
+    "parent_toc_id": 70
+  },
+  {
+    "toc_id": 79,
+    "level": 5,
+    "content": "A4-2.2-01, Selecting and Retaining Law Firms (02/09/2022)",
+    "page_no": 167,
+    "parent_toc_id": 78
+  },
+  {
+    "toc_id": 80,
+    "level": 5,
+    "content": "A4-2.2-02, Law Firm Management and Oversight (11/12/2014)",
+    "page_no": 171,
+    "parent_toc_id": 78
+  },
+  {
+    "toc_id": 81,
+    "level": 5,
+    "content": "A4-2.2-03, Prohibition Against Servicer-Specified Vendors for Fannie Mae Referrals, Use of Vendors, and Outsourcing Companies (04/12/2017)",
+    "page_no": 176,
+    "parent_toc_id": 78
+  },
+  {
+    "toc_id": 82,
+    "level": 5,
+    "content": "A4-2.2-04, Law Firm Suspensions, Matter Transfers, and Terminations (08/15/2018)",
+    "page_no": 177,
+    "parent_toc_id": 78
+  },
+  {
+    "toc_id": 83,
+    "level": 1,
+    "content": "Part B, Escrow, Taxes, Assessments, and Insurance",
+    "page_no": 180,
+    "parent_toc_id": -1
+  },
+  {
+    "toc_id": 84,
+    "level": 2,
+    "content": "Chapter B-1, Escrow Account Administration",
+    "page_no": 181,
+    "parent_toc_id": 83
+  },
+  {
+    "toc_id": 85,
+    "level": 3,
+    "content": "B-1-01, Administering an Escrow Account and Paying Expenses (06/08/2022)",
+    "page_no": 181,
+    "parent_toc_id": 84
+  },
+  {
+    "toc_id": 86,
+    "level": 2,
+    "content": "Chapter B-2, Property Insurance Requirements",
+    "page_no": 186,
+    "parent_toc_id": 83
+  },
+  {
+    "toc_id": 87,
+    "level": 3,
+    "content": "B-2-01, Property Insurance Requirements Applicable to All Property Types (12/08/2021)",
+    "page_no": 186,
+    "parent_toc_id": 86
+  },
+  {
+    "toc_id": 88,
+    "level": 3,
+    "content": "B-2-02, Property Insurance Requirements for Mortgage Loans Secured by a One- to Four-Unit Property (12/08/2021)",
+    "page_no": 188,
+    "parent_toc_id": 86
+  },
+  {
+    "toc_id": 89,
+    "level": 3,
+    "content": "B-2-03, Property Insurance Requirements for Mortgage Loans Secured by a Unit in a PUD, Condo, or Co-op (12/08/2021)",
+    "page_no": 190,
+    "parent_toc_id": 86
+  },
+  {
+    "toc_id": 90,
+    "level": 2,
+    "content": "Chapter B-3, Flood Insurance Requirements",
+    "page_no": 192,
+    "parent_toc_id": 83
+  },
+  {
+    "toc_id": 91,
+    "level": 3,
+    "content": "B-3-01, Flood Insurance Requirements Applicable to All Property Types (12/08/2021)",
+    "page_no": 192,
+    "parent_toc_id": 90
+  },
+  {
+    "toc_id": 92,
+    "level": 2,
+    "content": "Chapter B-4, Additional or Optional Insurance Coverage",
+    "page_no": 194,
+    "parent_toc_id": 83
+  },
+  {
+    "toc_id": 93,
+    "level": 3,
+    "content": "B-4-01, Builder’s Risk/Construction Site Insurance (12/08/2021)",
+    "page_no": 195,
+    "parent_toc_id": 92
+  },
+  {
+    "toc_id": 94,
+    "level": 3,
+    "content": "B-4-02, Credit Life or Mortgage Insurance Policies (12/08/2021)",
+    "page_no": 195,
+    "parent_toc_id": 92
+  },
+  {
+    "toc_id": 95,
+    "level": 2,
+    "content": "Chapter B-5, Property and Flood Insurance Loss Events and Claim Settlements",
+    "page_no": 196,
+    "parent_toc_id": 83
+  },
+  {
+    "toc_id": 96,
+    "level": 3,
+    "content": "B-5-01, Insured Loss Events (07/14/2021)",
+    "page_no": 196,
+    "parent_toc_id": 95
+  },
+  {
+    "toc_id": 97,
+    "level": 3,
+    "content": "B-5-02, Uninsured Loss Events (09/09/2020)",
+    "page_no": 203,
+    "parent_toc_id": 95
+  },
+  {
+    "toc_id": 98,
+    "level": 2,
+    "content": "Chapter B-6, Lender-Placed Insurance",
+    "page_no": 204,
+    "parent_toc_id": 83
+  },
+  {
+    "toc_id": 99,
+    "level": 3,
+    "content": "B-6-01, Lender-Placed Insurance Requirements (10/14/2015)",
+    "page_no": 204,
+    "parent_toc_id": 98
+  },
+  {
+    "toc_id": 100,
+    "level": 2,
+    "content": "Chapter B-7, Liability and Fidelity/Crime Insurance Requirements for Project Developments",
+    "page_no": 207,
+    "parent_toc_id": 83
+  },
+  {
+    "toc_id": 101,
+    "level": 3,
+    "content": "B-7-01, Liability Insurance Requirements for Project Developments (09/18/2018)",
+    "page_no": 207,
+    "parent_toc_id": 100
+  },
+  {
+    "toc_id": 102,
+    "level": 3,
+    "content": "B-7-02, Fidelity/Crime Insurance Requirements for Project Developments (09/18/2018)",
+    "page_no": 207,
+    "parent_toc_id": 100
+  },
+  {
+    "toc_id": 103,
+    "level": 2,
+    "content": "Chapter B-8, Mortgage Insurance",
+    "page_no": 208,
+    "parent_toc_id": 83
+  },
+  {
+    "toc_id": 104,
+    "level": 3,
+    "content": "Section B-8.1, Conventional Mortgage Insurance Requirements",
+    "page_no": 208,
+    "parent_toc_id": 103
+  },
+  {
+    "toc_id": 105,
+    "level": 4,
+    "content": "B-8.1-01, Conventional Mortgage Insurance Servicer Responsibilities (11/17/2021)",
+    "page_no": 208,
+    "parent_toc_id": 104
+  },
+  {
+    "toc_id": 106,
+    "level": 4,
+    "content": "B-8.1-02, Paying Conventional Mortgage Insurance Premiums (05/20/2015)",
+    "page_no": 210,
+    "parent_toc_id": 104
+  },
+  {
+    "toc_id": 107,
+    "level": 4,
+    "content": "B-8.1-03, Replacing Conventional Mortgage Insurance Policies (11/12/2014)",
+    "page_no": 211,
+    "parent_toc_id": 104
+  },
+  {
+    "toc_id": 108,
+    "level": 4,
+    "content": "B-8.1-04, Termination of Conventional Mortgage Insurance (05/15/2019)",
+    "page_no": 211,
+    "parent_toc_id": 104
+  },
+  {
+    "toc_id": 109,
+    "level": 3,
+    "content": "Section B-8.2, FHA Mortgage Insurance Requirements",
+    "page_no": 220,
+    "parent_toc_id": 103
+  },
+  {
+    "toc_id": 110,
+    "level": 4,
+    "content": "B-8.2-01, FHA Mortgage Insurance Coverage Requirements (05/10/2017)",
+    "page_no": 220,
+    "parent_toc_id": 109
+  },
+  {
+    "toc_id": 111,
+    "level": 4,
+    "content": "B-8.2-02, Conversion of FHA Coinsured Mortgage Loans to Full Insurance (11/12/2014)",
+    "page_no": 221,
+    "parent_toc_id": 109
+  },
+  {
+    "toc_id": 112,
+    "level": 4,
+    "content": "B-8.2-03, Termination or Cancellation of FHA Mortgage Insurance and FHA Mortgage Insurance Premium (11/12/2014)",
+    "page_no": 221,
+    "parent_toc_id": 109
+  },
+  {
+    "toc_id": 113,
+    "level": 1,
+    "content": "Part C, Mortgage Loan Payment Processing, Remitting, Accounting, and Reporting",
+    "page_no": 223,
+    "parent_toc_id": -1
+  },
+  {
+    "toc_id": 114,
+    "level": 2,
+    "content": "Chapter C-1, Processing Mortgage Loan Payments",
+    "page_no": 224,
+    "parent_toc_id": 113
+  },
+  {
+    "toc_id": 115,
+    "level": 3,
+    "content": "Section C-1.1, Processing Scheduled Mortgage Loan Payments",
+    "page_no": 224,
+    "parent_toc_id": 114
+  },
+  {
+    "toc_id": 116,
+    "level": 4,
+    "content": "C-1.1-01, Servicer Responsibilities for Processing Mortgage Loan Payments (11/12/2014)",
+    "page_no": 224,
+    "parent_toc_id": 115
+  },
+  {
+    "toc_id": 117,
+    "level": 4,
+    "content": "C-1.1-02, Processing Payment Shortages or Funds Received When a Mortgage Loan Modification Is Pending (12/11/2019)",
+    "page_no": 227,
+    "parent_toc_id": 115
+  },
+  {
+    "toc_id": 118,
+    "level": 4,
+    "content": "C-1.1-03, Automatically Drafting Payments from the Borrower’s Bank Account (11/12/2014)",
+    "page_no": 229,
+    "parent_toc_id": 115
+  },
+  {
+    "toc_id": 119,
+    "level": 4,
+    "content": "C-1.1-04, Accepting Biweekly Payments from Third-Party Payment Contractors (11/12/2014)",
+    "page_no": 229,
+    "parent_toc_id": 115
+  },
+  {
+    "toc_id": 120,
+    "level": 3,
+    "content": "Section C-1.2, Processing Unscheduled Mortgage Loan Payments",
+    "page_no": 229,
+    "parent_toc_id": 114
+  },
+  {
+    "toc_id": 121,
+    "level": 4,
+    "content": "C-1.2-01, Processing Additional Principal Payments (07/14/2021)",
+    "page_no": 229,
+    "parent_toc_id": 120
+  },
+  {
+    "toc_id": 122,
+    "level": 4,
+    "content": "C-1.2-02, Processing Short Sale Proceeds (11/12/2014)",
+    "page_no": 232,
+    "parent_toc_id": 120
+  },
+  {
+    "toc_id": 123,
+    "level": 4,
+    "content": "C-1.2-03, Processing Payments in Full (11/12/2014)",
+    "page_no": 232,
+    "parent_toc_id": 120
+  },
+  {
+    "toc_id": 124,
+    "level": 4,
+    "content": "C-1.2-04, Satisfying the Mortgage Loan and Releasing the Lien (05/15/2019)",
+    "page_no": 233,
+    "parent_toc_id": 120
+  },
+  {
+    "toc_id": 125,
+    "level": 4,
+    "content": "C-1.2-05, Charging for a Release of Lien (05/15/2019)",
+    "page_no": 235,
+    "parent_toc_id": 120
+  },
+  {
+    "toc_id": 126,
+    "level": 2,
+    "content": "Chapter C-2, Servicing ARM Loans",
+    "page_no": 236,
+    "parent_toc_id": 113
+  },
+  {
+    "toc_id": 127,
+    "level": 3,
+    "content": "Section C-2.1, Processing ARM Loan Payments",
+    "page_no": 236,
+    "parent_toc_id": 126
+  },
+  {
+    "toc_id": 128,
+    "level": 4,
+    "content": "C-2.1-01, Responsibilities for ARM Loan Servicing (11/12/2014)",
+    "page_no": 236,
+    "parent_toc_id": 127
+  },
+  {
+    "toc_id": 129,
+    "level": 4,
+    "content": "C-2.1-02, Notifying the Borrower Regarding Interest Rate and/or Payment Changes (11/12/2014)",
+    "page_no": 237,
+    "parent_toc_id": 127
+  },
+  {
+    "toc_id": 130,
+    "level": 3,
+    "content": "Section C-2.2, Processing Corrections to Errors",
+    "page_no": 240,
+    "parent_toc_id": 126
+  },
+  {
+    "toc_id": 131,
+    "level": 4,
+    "content": "C-2.2-01, Identifying and Disclosing Adjustment Errors (11/12/2014)",
+    "page_no": 240,
+    "parent_toc_id": 130
+  },
+  {
+    "toc_id": 132,
+    "level": 4,
+    "content": "C-2.2-02, Assuming Responsibility for Conversion Notice Errors (11/12/2014)",
+    "page_no": 241,
+    "parent_toc_id": 130
+  },
+  {
+    "toc_id": 133,
+    "level": 4,
+    "content": "C-2.2-03, Determining Whether to Provide a Refund or Credit for Overcharges (11/12/2014)",
+    "page_no": 242,
+    "parent_toc_id": 130
+  },
+  {
+    "toc_id": 134,
+    "level": 3,
+    "content": "Section C-2.3, Processing ARM Loan Conversions",
+    "page_no": 242,
+    "parent_toc_id": 126
+  },
+  {
+    "toc_id": 135,
+    "level": 4,
+    "content": "C-2.3-01, Processing ARM Conversions to Fixed Rate Mortgage Loans (05/15/2019)",
+    "page_no": 242,
+    "parent_toc_id": 134
+  },
+  {
+    "toc_id": 136,
+    "level": 4,
+    "content": "C-2.3-02, Notifying Fannie Mae of Conversions for Portfolio Mortgage Loans (11/12/2014)",
+    "page_no": 244,
+    "parent_toc_id": 134
+  },
+  {
+    "toc_id": 137,
+    "level": 4,
+    "content": "C-2.3-03, Repurchasing Converted MBS Mortgage Loans and Redelivering Them to Fannie Mae (11/12/2014)",
+    "page_no": 245,
+    "parent_toc_id": 134
+  },
+  {
+    "toc_id": 138,
+    "level": 2,
+    "content": "Chapter C-3, Remitting and Accounting",
+    "page_no": 245,
+    "parent_toc_id": 113
+  },
+  {
+    "toc_id": 139,
+    "level": 3,
+    "content": "C-3-01, Responsibilities Related to Remitting P&I Funds to Fannie Mae (07/15/2020)",
+    "page_no": 245,
+    "parent_toc_id": 138
+  },
+  {
+    "toc_id": 140,
+    "level": 3,
+    "content": "C-3-02, Remitting Payoff Proceeds (11/12/2014)",
+    "page_no": 247,
+    "parent_toc_id": 138
+  },
+  {
+    "toc_id": 141,
+    "level": 2,
+    "content": "Chapter C-4, Reporting",
+    "page_no": 247,
+    "parent_toc_id": 113
+  },
+  {
+    "toc_id": 142,
+    "level": 3,
+    "content": "Section C-4.1, Credit Bureau Reporting Requirements",
+    "page_no": 248,
+    "parent_toc_id": 141
+  },
+  {
+    "toc_id": 143,
+    "level": 4,
+    "content": "C-4.1-01, Notifying Credit Repositories (07/15/2020)",
+    "page_no": 248,
+    "parent_toc_id": 142
+  },
+  {
+    "toc_id": 144,
+    "level": 4,
+    "content": "C-4.1-02, DELETED TOPIC: Suspending Credit Bureau Reporting (04/13/2022)",
+    "page_no": 249,
+    "parent_toc_id": 142
+  },
+  {
+    "toc_id": 145,
+    "level": 3,
+    "content": "Section C-4.2, IRS Reporting Requirements",
+    "page_no": 250,
+    "parent_toc_id": 141
+  },
+  {
+    "toc_id": 146,
+    "level": 4,
+    "content": "C-4.2-01, Filing IRS Forms (06/09/2021)",
+    "page_no": 250,
+    "parent_toc_id": 145
+  },
+  {
+    "toc_id": 147,
+    "level": 3,
+    "content": "Section C-4.3, Investor Reporting Requirements",
+    "page_no": 252,
+    "parent_toc_id": 141
+  },
+  {
+    "toc_id": 148,
+    "level": 4,
+    "content": "C-4.3-01, Servicer Responsibilities Related to Investor Reporting (01/18/2017)",
+    "page_no": 252,
+    "parent_toc_id": 147
+  },
+  {
+    "toc_id": 149,
+    "level": 1,
+    "content": "Part D, Providing Solutions to a Borrower",
+    "page_no": 254,
+    "parent_toc_id": -1
+  },
+  {
+    "toc_id": 150,
+    "level": 2,
+    "content": "Subpart D1, Assisting the Borrower with Property-Related Issues and Legal Actions",
+    "page_no": 255,
+    "parent_toc_id": 149
+  },
+  {
+    "toc_id": 151,
+    "level": 3,
+    "content": "Chapter D1-1, Requests for the Release of Property and/or Charge-Off of a Mortgage Loan",
+    "page_no": 255,
+    "parent_toc_id": 150
+  },
+  {
+    "toc_id": 152,
+    "level": 4,
+    "content": "D1-1-01, Evaluating a Request for the Release, or Partial Release, of Property Securing a Mortgage Loan (06/09/2021)",
+    "page_no": 255,
+    "parent_toc_id": 151
+  },
+  {
+    "toc_id": 153,
+    "level": 4,
+    "content": "D1-1-02, Evaluating a First Lien Mortgage Loan for Charge-Off and Release of Lien (05/15/2019)",
+    "page_no": 270,
+    "parent_toc_id": 151
+  },
+  {
+    "toc_id": 154,
+    "level": 4,
+    "content": "D1-1-03, Evaluating a Second Lien Mortgage Charge-Off (11/12/2014)",
+    "page_no": 271,
+    "parent_toc_id": 151
+  },
+  {
+    "toc_id": 155,
+    "level": 3,
+    "content": "Chapter D1-2, Servicing Renovation Mortgage Loans",
+    "page_no": 272,
+    "parent_toc_id": 150
+  },
+  {
+    "toc_id": 156,
+    "level": 4,
+    "content": "D1-2-01, Renovation Mortgage Loans (02/09/2022)",
+    "page_no": 272,
+    "parent_toc_id": 155
+  },
+  {
+    "toc_id": 157,
+    "level": 3,
+    "content": "Chapter D1-3, Providing Assistance to a Borrower Impacted by a Disaster Event",
+    "page_no": 277,
+    "parent_toc_id": 150
+  },
+  {
+    "toc_id": 158,
+    "level": 4,
+    "content": "D1-3-01, Evaluating the Impact of a Disaster Event and Assisting a Borrower (02/09/2022)",
+    "page_no": 277,
+    "parent_toc_id": 157
+  },
+  {
+    "toc_id": 159,
+    "level": 3,
+    "content": "Chapter D1-4, Transfers of Ownership",
+    "page_no": 284,
+    "parent_toc_id": 150
+  },
+  {
+    "toc_id": 160,
+    "level": 4,
+    "content": "Section D1-4.1, Information Relating to Transfers of Ownership Applicable to All Mortgage Loans",
+    "page_no": 284,
+    "parent_toc_id": 159
+  },
+  {
+    "toc_id": 161,
+    "level": 5,
+    "content": "D1-4.1-01, Determining Whether a Transfer of Ownership Is Permitted (11/12/2014)",
+    "page_no": 284,
+    "parent_toc_id": 160
+  },
+  {
+    "toc_id": 162,
+    "level": 5,
+    "content": "D1-4.1-02, Allowable Exemptions Due to the Type of Transfer (04/13/2022)",
+    "page_no": 285,
+    "parent_toc_id": 160
+  },
+  {
+    "toc_id": 163,
+    "level": 5,
+    "content": "D1-4.1-03, Allowable Exceptions Due to State Law Restrictions (“Window-Period” Mortgage Loans) (11/08/2017)",
+    "page_no": 288,
+    "parent_toc_id": 160
+  },
+  {
+    "toc_id": 164,
+    "level": 5,
+    "content": "D1-4.1-04, Transfers of Ownership by Grant Deed (11/12/2014)",
+    "page_no": 290,
+    "parent_toc_id": 160
+  },
+  {
+    "toc_id": 165,
+    "level": 5,
+    "content": "D1-4.1-05, Enforcing the Due-on-Sale (or Due-on-Transfer) Provision (11/08/2017)",
+    "page_no": 290,
+    "parent_toc_id": 160
+  },
+  {
+    "toc_id": 166,
+    "level": 4,
+    "content": "Section D1-4.2, Information Relating to Transfers of Ownership on Conventional Mortgage Loans",
+    "page_no": 291,
+    "parent_toc_id": 159
+  },
+  {
+    "toc_id": 167,
+    "level": 5,
+    "content": "D1-4.2-01, Conventional Mortgage Loans that Do Not Include a Due-on-Sale (or Due-on-Transfer) Provision (09/09/2020)",
+    "page_no": 292,
+    "parent_toc_id": 166
+  },
+  {
+    "toc_id": 168,
+    "level": 5,
+    "content": "D1-4.2-02, Conventional Mortgage Loans That Include a Due- on-Sale (or Due-on-Transfer) Provision (11/08/2017)",
+    "page_no": 293,
+    "parent_toc_id": 166
+  },
+  {
+    "toc_id": 169,
+    "level": 4,
+    "content": "Section D1-4.3, Information Relating to Transfers of Ownership on Government Mortgage Loans",
+    "page_no": 295,
+    "parent_toc_id": 159
+  },
+  {
+    "toc_id": 170,
+    "level": 5,
+    "content": "D1-4.3-01, Transfers of Ownership on FHA and VA Mortgage Loans (11/08/2017)",
+    "page_no": 295,
+    "parent_toc_id": 169
+  },
+  {
+    "toc_id": 171,
+    "level": 5,
+    "content": "D1-4.3-02, Transfers of Ownership on RD Mortgage Loans (11/12/2014)",
+    "page_no": 296,
+    "parent_toc_id": 169
+  },
+  {
+    "toc_id": 172,
+    "level": 3,
+    "content": "Chapter D1-5, Call Provision Enforcement",
+    "page_no": 297,
+    "parent_toc_id": 150
+  },
+  {
+    "toc_id": 173,
+    "level": 4,
+    "content": "D1-5-01, Call Options and Cross-Default Provisions (11/12/2014)",
+    "page_no": 297,
+    "parent_toc_id": 172
+  },
+  {
+    "toc_id": 174,
+    "level": 3,
+    "content": "Chapter D1-6, Addressing Notices of Liens, Legal Action, Property Forfeitures or Seizures, or Other Actions",
+    "page_no": 299,
+    "parent_toc_id": 150
+  },
+  {
+    "toc_id": 175,
+    "level": 4,
+    "content": "D1-6-01, Requesting to Waive Certain Rights under the Mortgage Loan (11/12/2014)",
+    "page_no": 299,
+    "parent_toc_id": 174
+  },
+  {
+    "toc_id": 176,
+    "level": 4,
+    "content": "D1-6-02, Handling Notices of Liens, Legal Action, Other Actions Impacting Fannie Mae’s Interest (07/12/2017)",
+    "page_no": 299,
+    "parent_toc_id": 174
+  },
+  {
+    "toc_id": 177,
+    "level": 4,
+    "content": "D1-6-03, Handling Property Forfeitures and Seizures (11/12/2014)",
+    "page_no": 302,
+    "parent_toc_id": 174
+  },
+  {
+    "toc_id": 178,
+    "level": 2,
+    "content": "Subpart D2, Assisting a Borrower Who is Facing Default or in Default",
+    "page_no": 303,
+    "parent_toc_id": 149
+  },
+  {
+    "toc_id": 179,
+    "level": 3,
+    "content": "Chapter D2-1, Working with a Borrower Who is Facing Default",
+    "page_no": 303,
+    "parent_toc_id": 178
+  },
+  {
+    "toc_id": 180,
+    "level": 4,
+    "content": "D2-1-01, Determining if the Borrower’s Mortgage Payment is in Imminent Default (12/12/2018)",
+    "page_no": 303,
+    "parent_toc_id": 179
+  },
+  {
+    "toc_id": 181,
+    "level": 3,
+    "content": "Chapter D2-2, Requirements for Contacting a Borrower",
+    "page_no": 310,
+    "parent_toc_id": 178
+  },
+  {
+    "toc_id": 182,
+    "level": 4,
+    "content": "D2-2-01, Achieving Quality Right Party Contact with a Borrower (11/14/2018)",
+    "page_no": 310,
+    "parent_toc_id": 181
+  },
+  {
+    "toc_id": 183,
+    "level": 4,
+    "content": "D2-2-02, Outbound Contact Attempt Requirements (11/14/2018)",
+    "page_no": 311,
+    "parent_toc_id": 181
+  },
+  {
+    "toc_id": 184,
+    "level": 4,
+    "content": "D2-2-03, Sending a Payment Reminder Notice (07/15/2020)",
+    "page_no": 313,
+    "parent_toc_id": 181
+  },
+  {
+    "toc_id": 185,
+    "level": 4,
+    "content": "D2-2-04, Sending a Borrower a Solicitation Package for a Workout Option (09/13/2017)",
+    "page_no": 315,
+    "parent_toc_id": 181
+  },
+  {
+    "toc_id": 186,
+    "level": 4,
+    "content": "D2-2-05, Receiving a Borrower Response Package (06/09/2021)",
+    "page_no": 316,
+    "parent_toc_id": 181
+  },
+  {
+    "toc_id": 187,
+    "level": 4,
+    "content": "D2-2-06, Sending a Breach or Acceleration Letter (11/14/2018)",
+    "page_no": 322,
+    "parent_toc_id": 181
+  },
+  {
+    "toc_id": 188,
+    "level": 4,
+    "content": "D2-2-07, Resolving an Appeal of a Mortgage Loan Modification Trial Period Plan Denial for a Principal Residence (05/10/2017)",
+    "page_no": 323,
+    "parent_toc_id": 181
+  },
+  {
+    "toc_id": 189,
+    "level": 4,
+    "content": "D2-2-08, Interviewing Face-to-Face with a Borrower for Certain FHA and HUD Mortgage Loans (11/12/2014)",
+    "page_no": 326,
+    "parent_toc_id": 181
+  },
+  {
+    "toc_id": 190,
+    "level": 4,
+    "content": "D2-2-09, Additional Borrower Contact Requirements for the Servicer of a Second Lien Mortgage Loan (12/16/2015)",
+    "page_no": 327,
+    "parent_toc_id": 181
+  },
+  {
+    "toc_id": 191,
+    "level": 4,
+    "content": "D2-2-10, Requirements for Performing Property Inspections (11/17/2021)",
+    "page_no": 328,
+    "parent_toc_id": 181
+  },
+  {
+    "toc_id": 192,
+    "level": 3,
+    "content": "Chapter D2-3, Fannie Mae’s Home Retention and Liquidation Workout Options",
+    "page_no": 334,
+    "parent_toc_id": 178
+  },
+  {
+    "toc_id": 193,
+    "level": 4,
+    "content": "Section D2-3.1, Preparing to Implement a Home Retention or Liquidation Workout Option",
+    "page_no": 334,
+    "parent_toc_id": 192
+  },
+  {
+    "toc_id": 194,
+    "level": 5,
+    "content": "D2-3.1-01, Determining the Appropriate Workout Option (11/12/2014)",
+    "page_no": 335,
+    "parent_toc_id": 193
+  },
+  {
+    "toc_id": 195,
+    "level": 5,
+    "content": "D2-3.1-02, Conditions of a First and Second Lien Mortgage Loan Modification for an MBS Mortgage Loan (01/20/2021)",
+    "page_no": 337,
+    "parent_toc_id": 193
+  },
+  {
+    "toc_id": 196,
+    "level": 5,
+    "content": "D2-3.1-03, Working with a Borrower that has a Group Home Mortgage Loan (11/12/2014)",
+    "page_no": 338,
+    "parent_toc_id": 193
+  },
+  {
+    "toc_id": 197,
+    "level": 5,
+    "content": "D2-3.1-04, Offering a Workout Option When Also Servicing a Subordinate Lien Mortgage Loan (09/09/2020)",
+    "page_no": 339,
+    "parent_toc_id": 193
+  },
+  {
+    "toc_id": 198,
+    "level": 5,
+    "content": "D2-3.1-05, Interacting with Mortgage Assistance Fund Program Providers (07/14/2021)",
+    "page_no": 340,
+    "parent_toc_id": 193
+  },
+  {
+    "toc_id": 199,
+    "level": 5,
+    "content": "D2-3.1-06, Notifying Fannie Mae of Lead-Based Paint Citations (11/12/2014)",
+    "page_no": 342,
+    "parent_toc_id": 193
+  },
+  {
+    "toc_id": 200,
+    "level": 4,
+    "content": "Section D2-3.2, Home Retention Workout Options",
+    "page_no": 343,
+    "parent_toc_id": 192
+  },
+  {
+    "toc_id": 201,
+    "level": 5,
+    "content": "D2-3.2-01, Forbearance Plan (09/09/2020)",
+    "page_no": 343,
+    "parent_toc_id": 200
+  },
+  {
+    "toc_id": 202,
+    "level": 5,
+    "content": "D2-3.2-02, Repayment Plan (05/10/2017)",
+    "page_no": 346,
+    "parent_toc_id": 200
+  },
+  {
+    "toc_id": 203,
+    "level": 5,
+    "content": "D2-3.2-03, Government Mortgage Loan Modifications (08/17/2016)",
+    "page_no": 349,
+    "parent_toc_id": 200
+  },
+  {
+    "toc_id": 204,
+    "level": 5,
+    "content": "D2-3.2-04, Fannie Mae HAMP Modification (09/13/2017)",
+    "page_no": 349,
+    "parent_toc_id": 200
+  },
+  {
+    "toc_id": 205,
+    "level": 5,
+    "content": "D2-3.2-05, Payment Deferral (12/09/2020)",
+    "page_no": 356,
+    "parent_toc_id": 200
+  },
+  {
+    "toc_id": 206,
+    "level": 5,
+    "content": "D2-3.2-06, Disaster Payment Deferral (06/08/2022)",
+    "page_no": 362,
+    "parent_toc_id": 200
+  },
+  {
+    "toc_id": 207,
+    "level": 5,
+    "content": "D2-3.2-07, Fannie Mae Flex Modification (09/09/2020)",
+    "page_no": 369,
+    "parent_toc_id": 200
+  },
+  {
+    "toc_id": 208,
+    "level": 4,
+    "content": "Section D2-3.3, Home Liquidation Workout Options",
+    "page_no": 380,
+    "parent_toc_id": 192
+  },
+  {
+    "toc_id": 209,
+    "level": 5,
+    "content": "D2-3.3-01, Fannie Mae Short Sale (02/09/2022)",
+    "page_no": 380,
+    "parent_toc_id": 208
+  },
+  {
+    "toc_id": 210,
+    "level": 5,
+    "content": "D2-3.3-02, Fannie Mae Mortgage Release (Deed-in-Lieu of Foreclosure) (02/09/2022)",
+    "page_no": 395,
+    "parent_toc_id": 208
+  },
+  {
+    "toc_id": 211,
+    "level": 4,
+    "content": "Section D2-3.4, Other Workout Options to Assist a Borrower",
+    "page_no": 408,
+    "parent_toc_id": 192
+  },
+  {
+    "toc_id": 212,
+    "level": 5,
+    "content": "D2-3.4-01, Military Indulgence (06/13/2018)",
+    "page_no": 409,
+    "parent_toc_id": 211
+  },
+  {
+    "toc_id": 213,
+    "level": 5,
+    "content": "D2-3.4-02, Offering a Mortgage Release (Deed-in-Lieu of Foreclosure) for a Second Lien Mortgage Loan (11/12/2014)",
+    "page_no": 411,
+    "parent_toc_id": 211
+  },
+  {
+    "toc_id": 214,
+    "level": 5,
+    "content": "D2-3.4-03, Assignment of a Mortgage Loan to the Insurer or Guarantor (11/12/2014)",
+    "page_no": 412,
+    "parent_toc_id": 211
+  },
+  {
+    "toc_id": 215,
+    "level": 5,
+    "content": "D2-3.4-04, Qualifying Mortgage Assumption Workout Option (11/08/2017)",
+    "page_no": 413,
+    "parent_toc_id": 211
+  },
+  {
+    "toc_id": 216,
+    "level": 3,
+    "content": "Chapter D2-4, Reporting Delinquent Mortgage Loans and Workout Options",
+    "page_no": 414,
+    "parent_toc_id": 178
+  },
+  {
+    "toc_id": 217,
+    "level": 4,
+    "content": "D2-4-01, Reporting a Delinquent Mortgage Loan to Fannie Mae (06/10/2020)",
+    "page_no": 415,
+    "parent_toc_id": 216
+  },
+  {
+    "toc_id": 218,
+    "level": 4,
+    "content": "D2-4-02, Reporting a Workout Option to Fannie Mae (12/16/2015)",
+    "page_no": 415,
+    "parent_toc_id": 216
+  },
+  {
+    "toc_id": 219,
+    "level": 4,
+    "content": "D2-4-03, Reporting Certain Workout Options to Treasury (11/12/2014)",
+    "page_no": 416,
+    "parent_toc_id": 216
+  },
+  {
+    "toc_id": 220,
+    "level": 1,
+    "content": "Part E, Default-Related Legal Services, Bankruptcy, Foreclosure Proceedings, and Acquired Properties",
+    "page_no": 417,
+    "parent_toc_id": -1
+  },
+  {
+    "toc_id": 221,
+    "level": 2,
+    "content": "Chapter E-1, Referring Default-Related Legal Matters and Non-Routine Litigation to Law Firms",
+    "page_no": 418,
+    "parent_toc_id": 220
+  },
+  {
+    "toc_id": 222,
+    "level": 3,
+    "content": "Section E-1.1, Referring a Mortgage Loan to a Law Firm",
+    "page_no": 418,
+    "parent_toc_id": 221
+  },
+  {
+    "toc_id": 223,
+    "level": 4,
+    "content": "E-1.1-01, General Requirements for Referring a Mortgage Loan to a Law Firm (08/15/2018)",
+    "page_no": 418,
+    "parent_toc_id": 222
+  },
+  {
+    "toc_id": 224,
+    "level": 4,
+    "content": "E-1.1-02, Required Referral Documents (11/12/2014)",
+    "page_no": 420,
+    "parent_toc_id": 222
+  },
+  {
+    "toc_id": 225,
+    "level": 4,
+    "content": "E-1.1-03, Required Referral Data (11/12/2014)",
+    "page_no": 423,
+    "parent_toc_id": 222
+  },
+  {
+    "toc_id": 226,
+    "level": 3,
+    "content": "Section E-1.2, Timing of the Referral to a Law Firm",
+    "page_no": 424,
+    "parent_toc_id": 221
+  },
+  {
+    "toc_id": 227,
+    "level": 4,
+    "content": "E-1.2-01, Timing of the Bankruptcy Referral (11/12/2014)",
+    "page_no": 425,
+    "parent_toc_id": 226
+  },
+  {
+    "toc_id": 228,
+    "level": 4,
+    "content": "E-1.2-02, Timing of the Foreclosure Referral for Mortgage Loans Generally (09/18/2018)",
+    "page_no": 427,
+    "parent_toc_id": 226
+  },
+  {
+    "toc_id": 229,
+    "level": 4,
+    "content": "E-1.2-03, Timing of the Foreclosure Referral for Second Lien Conventional Mortgage Loans Not Secured by a Principal Residence (11/12/2014)",
+    "page_no": 428,
+    "parent_toc_id": 226
+  },
+  {
+    "toc_id": 230,
+    "level": 4,
+    "content": "E-1.2-04, Timing of the Foreclosure Referral for Government Mortgage Loans (11/12/2014)",
+    "page_no": 429,
+    "parent_toc_id": 226
+  },
+  {
+    "toc_id": 231,
+    "level": 3,
+    "content": "Section E-1.3, Handling Non-Routine Litigation",
+    "page_no": 429,
+    "parent_toc_id": 221
+  },
+  {
+    "toc_id": 232,
+    "level": 4,
+    "content": "E-1.3-01, General Servicer Responsibilities for Non-Routine Matters (09/09/2020)",
+    "page_no": 429,
+    "parent_toc_id": 231
+  },
+  {
+    "toc_id": 233,
+    "level": 4,
+    "content": "E-1.3-02, Reporting Non-Routine Litigation to Fannie Mae (11/12/2014)",
+    "page_no": 433,
+    "parent_toc_id": 231
+  },
+  {
+    "toc_id": 234,
+    "level": 4,
+    "content": "E-1.3-03, Reporting “Legal Filings” to MERS (11/12/2014)",
+    "page_no": 433,
+    "parent_toc_id": 231
+  },
+  {
+    "toc_id": 235,
+    "level": 2,
+    "content": "Chapter E-2, Managing Bankruptcy Proceedings",
+    "page_no": 434,
+    "parent_toc_id": 220
+  },
+  {
+    "toc_id": 236,
+    "level": 3,
+    "content": "Section E-2.1, Bankruptcy Proceedings in General",
+    "page_no": 434,
+    "parent_toc_id": 235
+  },
+  {
+    "toc_id": 237,
+    "level": 4,
+    "content": "E-2.1-01, General Servicing Requirements for Mortgage Loans Under Bankruptcy Protection (06/10/2020)",
+    "page_no": 434,
+    "parent_toc_id": 236
+  },
+  {
+    "toc_id": 238,
+    "level": 4,
+    "content": "E-2.1-02, Confirming Bankruptcy Information (11/12/2014)",
+    "page_no": 435,
+    "parent_toc_id": 236
+  },
+  {
+    "toc_id": 239,
+    "level": 4,
+    "content": "E-2.1-03, Suspending Debt Collection Efforts (11/12/2014)",
+    "page_no": 436,
+    "parent_toc_id": 236
+  },
+  {
+    "toc_id": 240,
+    "level": 4,
+    "content": "E-2.1-04, Expected Servicer/Attorney Interaction During Bankruptcy Proceedings (11/12/2014)",
+    "page_no": 437,
+    "parent_toc_id": 236
+  },
+  {
+    "toc_id": 241,
+    "level": 4,
+    "content": "E-2.1-05, Filing a Notice of Appearance and Sending Proper Notices (11/12/2014)",
+    "page_no": 437,
+    "parent_toc_id": 236
+  },
+  {
+    "toc_id": 242,
+    "level": 4,
+    "content": "E-2.1-06, Reviewing Bankruptcy Reorganization Plans (11/12/2014)",
+    "page_no": 438,
+    "parent_toc_id": 236
+  },
+  {
+    "toc_id": 243,
+    "level": 4,
+    "content": "E-2.1-07, Preparing and Filing a Proof of Claim (11/12/2014)",
+    "page_no": 439,
+    "parent_toc_id": 236
+  },
+  {
+    "toc_id": 244,
+    "level": 4,
+    "content": "E-2.1-08, Monitoring Borrower Payments and Critical Dates (11/12/2014)",
+    "page_no": 439,
+    "parent_toc_id": 236
+  },
+  {
+    "toc_id": 245,
+    "level": 4,
+    "content": "E-2.1-09, Identifying Workout Opportunities (11/12/2014)",
+    "page_no": 440,
+    "parent_toc_id": 236
+  },
+  {
+    "toc_id": 246,
+    "level": 4,
+    "content": "E-2.1-10, Dealing with Delays in the Bankruptcy Process (11/12/2014)",
+    "page_no": 440,
+    "parent_toc_id": 236
+  },
+  {
+    "toc_id": 247,
+    "level": 4,
+    "content": "E-2.1-11, Remitting P&I for MBS Mortgage Loans That Are Part of a Bankruptcy (01/20/2021)",
+    "page_no": 441,
+    "parent_toc_id": 236
+  },
+  {
+    "toc_id": 248,
+    "level": 3,
+    "content": "Section E-2.2, Managing Bankruptcies by Chapter",
+    "page_no": 443,
+    "parent_toc_id": 235
+  },
+  {
+    "toc_id": 249,
+    "level": 4,
+    "content": "E-2.2-01, Managing Chapter 7 Bankruptcies (11/12/2014)",
+    "page_no": 444,
+    "parent_toc_id": 248
+  },
+  {
+    "toc_id": 250,
+    "level": 4,
+    "content": "E-2.2-02, Managing Chapter 11 Bankruptcies (05/15/2019)",
+    "page_no": 445,
+    "parent_toc_id": 248
+  },
+  {
+    "toc_id": 251,
+    "level": 4,
+    "content": "E-2.2-03, Managing Chapter 12 Bankruptcies (11/12/2014)",
+    "page_no": 448,
+    "parent_toc_id": 248
+  },
+  {
+    "toc_id": 252,
+    "level": 4,
+    "content": "E-2.2-04, Managing Chapter 13 Bankruptcies (11/12/2014)",
+    "page_no": 449,
+    "parent_toc_id": 248
+  },
+  {
+    "toc_id": 253,
+    "level": 3,
+    "content": "Section E-2.3, Servicing Special Circumstance Bankruptcies",
+    "page_no": 452,
+    "parent_toc_id": 235
+  },
+  {
+    "toc_id": 254,
+    "level": 4,
+    "content": "E-2.3-01, Identifying Abusive Filers (11/12/2014)",
+    "page_no": 452,
+    "parent_toc_id": 253
+  },
+  {
+    "toc_id": 255,
+    "level": 4,
+    "content": "E-2.3-02, Addressing Individuals with Fractional Interests in a Security Property (11/12/2014)",
+    "page_no": 452,
+    "parent_toc_id": 253
+  },
+  {
+    "toc_id": 256,
+    "level": 4,
+    "content": "E-2.3-03, Handling Cramdowns of the Mortgage Debt (11/25/2015)",
+    "page_no": 453,
+    "parent_toc_id": 253
+  },
+  {
+    "toc_id": 257,
+    "level": 4,
+    "content": "E-2.3-04, Bankruptcies Involving Mortgage Loans Secured by Investment Properties (11/12/2014)",
+    "page_no": 455,
+    "parent_toc_id": 253
+  },
+  {
+    "toc_id": 258,
+    "level": 4,
+    "content": "E-2.3-05, Bankruptcies Involving Multiple Fannie Mae Mortgage Loans (11/12/2014)",
+    "page_no": 456,
+    "parent_toc_id": 253
+  },
+  {
+    "toc_id": 259,
+    "level": 4,
+    "content": "E-2.3-06, Responding to Bankruptcies Identified After Foreclosure Sale (07/14/2021)",
+    "page_no": 456,
+    "parent_toc_id": 253
+  },
+  {
+    "toc_id": 260,
+    "level": 4,
+    "content": "E-2.3-07, Cross-Border Insolvency Proceedings (11/12/2014)",
+    "page_no": 458,
+    "parent_toc_id": 253
+  },
+  {
+    "toc_id": 261,
+    "level": 2,
+    "content": "Chapter E-3, Managing Foreclosure Proceedings",
+    "page_no": 458,
+    "parent_toc_id": 220
+  },
+  {
+    "toc_id": 262,
+    "level": 3,
+    "content": "Section E-3.1, Foreclosure Proceedings in General",
+    "page_no": 458,
+    "parent_toc_id": 261
+  },
+  {
+    "toc_id": 263,
+    "level": 4,
+    "content": "E-3.1-01, General Servicing Requirements Related to Foreclosure Proceedings (11/12/2014)",
+    "page_no": 459,
+    "parent_toc_id": 262
+  },
+  {
+    "toc_id": 264,
+    "level": 4,
+    "content": "E-3.1-02, Performing Due Diligence Prior to Considering Foreclosure (11/12/2014)",
+    "page_no": 459,
+    "parent_toc_id": 262
+  },
+  {
+    "toc_id": 265,
+    "level": 4,
+    "content": "E-3.1-03, Fannie Mae Address for Instruments of Record (11/12/2014)",
+    "page_no": 460,
+    "parent_toc_id": 262
+  },
+  {
+    "toc_id": 266,
+    "level": 4,
+    "content": "E-3.1-04, Addressing a Bankruptcy Filed During Active Foreclosure (11/12/2014)",
+    "page_no": 461,
+    "parent_toc_id": 262
+  },
+  {
+    "toc_id": 267,
+    "level": 3,
+    "content": "Section E-3.2, Initiating and Processing Foreclosure Proceedings",
+    "page_no": 461,
+    "parent_toc_id": 261
+  },
+  {
+    "toc_id": 268,
+    "level": 4,
+    "content": "E-3.2-01, Conducting Prereferral Review (07/14/2021)",
+    "page_no": 462,
+    "parent_toc_id": 267
+  },
+  {
+    "toc_id": 269,
+    "level": 4,
+    "content": "E-3.2-02, Initiating Foreclosure Proceedings on a First Lien Conventional Mortgage Loan (11/12/2014)",
+    "page_no": 463,
+    "parent_toc_id": 267
+  },
+  {
+    "toc_id": 270,
+    "level": 4,
+    "content": "E-3.2-03, Initiating Foreclosure Proceedings on a Second Lien Conventional Mortgage Loan (11/12/2014)",
+    "page_no": 464,
+    "parent_toc_id": 267
+  },
+  {
+    "toc_id": 271,
+    "level": 4,
+    "content": "E-3.2-04, Postponing Foreclosure Referral for Mortgage Loans Not Secured by a Principal Residence (08/17/2016)",
+    "page_no": 465,
+    "parent_toc_id": 267
+  },
+  {
+    "toc_id": 272,
+    "level": 4,
+    "content": "E-3.2-05, Expected Servicer/Attorney Interaction During Foreclosure Proceedings (04/10/2019)",
+    "page_no": 466,
+    "parent_toc_id": 267
+  },
+  {
+    "toc_id": 273,
+    "level": 4,
+    "content": "E-3.2-06, Conducting Borrower Outreach During Foreclosure (12/16/2015)",
+    "page_no": 468,
+    "parent_toc_id": 267
+  },
+  {
+    "toc_id": 274,
+    "level": 4,
+    "content": "E-3.2-07, Impact of Engagement with a Mortgage Assistance Fund Program Provider (07/14/2021)",
+    "page_no": 469,
+    "parent_toc_id": 267
+  },
+  {
+    "toc_id": 275,
+    "level": 4,
+    "content": "E-3.2-08, Processing Reinstatements During Foreclosure (07/14/2021)",
+    "page_no": 470,
+    "parent_toc_id": 267
+  },
+  {
+    "toc_id": 276,
+    "level": 4,
+    "content": "E-3.2-09, Conducting Foreclosure Proceedings (10/13/2021)",
+    "page_no": 472,
+    "parent_toc_id": 267
+  },
+  {
+    "toc_id": 277,
+    "level": 4,
+    "content": "E-3.2-10, Paying Certain Expenses During the Foreclosure Process (11/12/2014)",
+    "page_no": 474,
+    "parent_toc_id": 267
+  },
+  {
+    "toc_id": 278,
+    "level": 4,
+    "content": "E-3.2-11, Collecting Under an Assignment of Rents (08/12/2015)",
+    "page_no": 474,
+    "parent_toc_id": 267
+  },
+  {
+    "toc_id": 279,
+    "level": 4,
+    "content": "E-3.2-12, Performing Property Preservation During Foreclosure Proceedings (07/14/2021)",
+    "page_no": 475,
+    "parent_toc_id": 267
+  },
+  {
+    "toc_id": 280,
+    "level": 4,
+    "content": "E-3.2-13, Addressing Title Defects Generally (12/16/2015)",
+    "page_no": 476,
+    "parent_toc_id": 267
+  },
+  {
+    "toc_id": 281,
+    "level": 4,
+    "content": "E-3.2-14, Addressing Title Defects for Bifurcated Mortgage Loans (08/17/2016)",
+    "page_no": 478,
+    "parent_toc_id": 267
+  },
+  {
+    "toc_id": 282,
+    "level": 4,
+    "content": "E-3.2-15, Allowable Time Frames for Completing Foreclosure (11/12/2014)",
+    "page_no": 479,
+    "parent_toc_id": 267
+  },
+  {
+    "toc_id": 283,
+    "level": 3,
+    "content": "Section E-3.3, Preparing for the Foreclosure Sale",
+    "page_no": 480,
+    "parent_toc_id": 261
+  },
+  {
+    "toc_id": 284,
+    "level": 4,
+    "content": "E-3.3-01, Completing Preforeclosure Sale Review (04/10/2019)",
+    "page_no": 480,
+    "parent_toc_id": 283
+  },
+  {
+    "toc_id": 285,
+    "level": 4,
+    "content": "E-3.3-02, Certifying the Status of Workout Negotiations Prior to Foreclosure Sale (11/12/2014)",
+    "page_no": 481,
+    "parent_toc_id": 283
+  },
+  {
+    "toc_id": 286,
+    "level": 4,
+    "content": "E-3.3-03, Inspecting Properties Prior to Foreclosure Sale (04/10/2019)",
+    "page_no": 482,
+    "parent_toc_id": 283
+  },
+  {
+    "toc_id": 287,
+    "level": 4,
+    "content": "E-3.3-04, Marketing the Foreclosure Sale and Using Foreclosure Auction Services (11/14/2018)",
+    "page_no": 482,
+    "parent_toc_id": 283
+  },
+  {
+    "toc_id": 288,
+    "level": 4,
+    "content": "E-3.3-05, Issuing Bidding Instructions (06/08/2022)",
+    "page_no": 483,
+    "parent_toc_id": 283
+  },
+  {
+    "toc_id": 289,
+    "level": 4,
+    "content": "E-3.3-06, Handling a Suspension or Reduction of the Redemption Period (11/12/2014)",
+    "page_no": 488,
+    "parent_toc_id": 283
+  },
+  {
+    "toc_id": 290,
+    "level": 4,
+    "content": "E-3.3-07, Pursuing a Deficiency Judgment (01/18/2017)",
+    "page_no": 489,
+    "parent_toc_id": 283
+  },
+  {
+    "toc_id": 291,
+    "level": 3,
+    "content": "Section E-3.4, When Foreclosure Proceedings Must Be Suspended or Canceled",
+    "page_no": 490,
+    "parent_toc_id": 261
+  },
+  {
+    "toc_id": 292,
+    "level": 4,
+    "content": "E-3.4-01, Suspending Foreclosure Proceedings for Workout Negotiations (07/14/2021)",
+    "page_no": 490,
+    "parent_toc_id": 291
+  },
+  {
+    "toc_id": 293,
+    "level": 4,
+    "content": "E-3.4-02, Canceling the Foreclosure Sale for a Completed Workout (04/10/2019)",
+    "page_no": 499,
+    "parent_toc_id": 291
+  },
+  {
+    "toc_id": 294,
+    "level": 3,
+    "content": "Section E-3.5, Servicer Responsibilities Following the Foreclosure Sale",
+    "page_no": 500,
+    "parent_toc_id": 261
+  },
+  {
+    "toc_id": 295,
+    "level": 4,
+    "content": "E-3.5-01, Foreclosure of a Property Securing an MBS Mortgage Loan (10/13/2021)",
+    "page_no": 500,
+    "parent_toc_id": 294
+  },
+  {
+    "toc_id": 296,
+    "level": 4,
+    "content": "E-3.5-02, Handling Third-Party Sales (07/12/2017)",
+    "page_no": 501,
+    "parent_toc_id": 294
+  },
+  {
+    "toc_id": 297,
+    "level": 4,
+    "content": "E-3.5-03, Providing Evidence of Title (11/12/2014)",
+    "page_no": 503,
+    "parent_toc_id": 294
+  },
+  {
+    "toc_id": 298,
+    "level": 2,
+    "content": "Chapter E-4, Managing Acquired Properties",
+    "page_no": 503,
+    "parent_toc_id": 220
+  },
+  {
+    "toc_id": 299,
+    "level": 3,
+    "content": "Section E-4.1, Notifying Fannie Mae of Property Acquisitions",
+    "page_no": 503,
+    "parent_toc_id": 298
+  },
+  {
+    "toc_id": 300,
+    "level": 4,
+    "content": "E-4.1-01, Notifying Fannie Mae of an Acquired Property (07/14/2021)",
+    "page_no": 504,
+    "parent_toc_id": 299
+  },
+  {
+    "toc_id": 301,
+    "level": 4,
+    "content": "E-4.1-02, Eliminations and Rescissions of Foreclosure Sales (07/14/2021)",
+    "page_no": 506,
+    "parent_toc_id": 299
+  },
+  {
+    "toc_id": 302,
+    "level": 3,
+    "content": "Section E-4.2, Conveying Title to an Acquired Property",
+    "page_no": 508,
+    "parent_toc_id": 298
+  },
+  {
+    "toc_id": 303,
+    "level": 4,
+    "content": "E-4.2-01, Completing Conveyance Documents (04/10/2019)",
+    "page_no": 508,
+    "parent_toc_id": 302
+  },
+  {
+    "toc_id": 304,
+    "level": 4,
+    "content": "E-4.2-02, Handling Reconveyance to the Insurer or Guarantor (08/17/2016)",
+    "page_no": 511,
+    "parent_toc_id": 302
+  },
+  {
+    "toc_id": 305,
+    "level": 3,
+    "content": "Section E-4.3, Preserving and Managing Properties",
+    "page_no": 512,
+    "parent_toc_id": 298
+  },
+  {
+    "toc_id": 306,
+    "level": 4,
+    "content": "E-4.3-01, Managing the Property Post-Foreclosure Sale (04/10/2019)",
+    "page_no": 512,
+    "parent_toc_id": 305
+  },
+  {
+    "toc_id": 307,
+    "level": 4,
+    "content": "E-4.3-02, Inspecting Properties Post-Foreclosure Sale (11/13/2019)",
+    "page_no": 513,
+    "parent_toc_id": 305
+  },
+  {
+    "toc_id": 308,
+    "level": 4,
+    "content": "E-4.3-03, The Broker's, Agent's, or Property Management Company's Responsibilities (11/12/2014)",
+    "page_no": 514,
+    "parent_toc_id": 305
+  },
+  {
+    "toc_id": 309,
+    "level": 4,
+    "content": "E-4.3-04, Handling Eviction Proceedings (11/12/2014)",
+    "page_no": 515,
+    "parent_toc_id": 305
+  },
+  {
+    "toc_id": 310,
+    "level": 3,
+    "content": "Section E-4.4, Property and Flood Insurance Coverage Requirements",
+    "page_no": 516,
+    "parent_toc_id": 298
+  },
+  {
+    "toc_id": 311,
+    "level": 4,
+    "content": "E-4.4-01, Continuing or Canceling Property Insurance Coverage (11/13/2019)",
+    "page_no": 516,
+    "parent_toc_id": 310
+  },
+  {
+    "toc_id": 312,
+    "level": 4,
+    "content": "E-4.4-02, Remitting Property Insurance Settlement Proceeds or Unearned Premium Refunds (04/10/2019)",
+    "page_no": 519,
+    "parent_toc_id": 310
+  },
+  {
+    "toc_id": 313,
+    "level": 4,
+    "content": "E-4.4-03, Canceling Flood Insurance Coverage for Acquired Properties (11/13/2019)",
+    "page_no": 520,
+    "parent_toc_id": 310
+  },
+  {
+    "toc_id": 314,
+    "level": 4,
+    "content": "E-4.4-04, Remitting Flood Insurance Settlement Proceeds or Unearned Premium Refunds (06/13/2018)",
+    "page_no": 521,
+    "parent_toc_id": 310
+  },
+  {
+    "toc_id": 315,
+    "level": 3,
+    "content": "Section E-4.5, Filing MI Claims for Liquidated Properties",
+    "page_no": 522,
+    "parent_toc_id": 298
+  },
+  {
+    "toc_id": 316,
+    "level": 4,
+    "content": "E-4.5-01, Filing MI Claims for Conventional Mortgage Loans or for Other Mortgage Loans for which Fannie Mae Bears the Risk of Loss (07/14/2021)",
+    "page_no": 522,
+    "parent_toc_id": 315
+  },
+  {
+    "toc_id": 317,
+    "level": 4,
+    "content": "E-4.5-02, Filing MI Claims for FHA Mortgage Loans (11/12/2014)",
+    "page_no": 525,
+    "parent_toc_id": 315
+  },
+  {
+    "toc_id": 318,
+    "level": 4,
+    "content": "E-4.5-03, Filing MI Claims for FHA Coinsured Mortgage Loans (11/12/2014)",
+    "page_no": 526,
+    "parent_toc_id": 315
+  },
+  {
+    "toc_id": 319,
+    "level": 4,
+    "content": "E-4.5-04, Filing MI Claims for FHA Title I Loans (11/12/2014)",
+    "page_no": 527,
+    "parent_toc_id": 315
+  },
+  {
+    "toc_id": 320,
+    "level": 4,
+    "content": "E-4.5-05, Filing MI Claims for HUD Section 184 Mortgage Loans (11/12/2014)",
+    "page_no": 527,
+    "parent_toc_id": 315
+  },
+  {
+    "toc_id": 321,
+    "level": 4,
+    "content": "E-4.5-06, Filing MI Claims for VA Mortgage Loans (12/16/2015)",
+    "page_no": 528,
+    "parent_toc_id": 315
+  },
+  {
+    "toc_id": 322,
+    "level": 4,
+    "content": "E-4.5-07, Filing MI Claims for RD Mortgage Loans (11/12/2014)",
+    "page_no": 528,
+    "parent_toc_id": 315
+  },
+  {
+    "toc_id": 323,
+    "level": 2,
+    "content": "Chapter E-5, Requesting Reimbursement for Expenses Associated with Default-Related Legal Matters",
+    "page_no": 530,
+    "parent_toc_id": 220
+  },
+  {
+    "toc_id": 324,
+    "level": 3,
+    "content": "E-5-01, Requesting Reimbursement for Expenses (11/09/2016)",
+    "page_no": 530,
+    "parent_toc_id": 323
+  },
+  {
+    "toc_id": 325,
+    "level": 3,
+    "content": "E-5-02, Servicer Responsibilities Prior to Requesting Reimbursement of Attorney Fees and Costs (02/12/2020)",
+    "page_no": 531,
+    "parent_toc_id": 323
+  },
+  {
+    "toc_id": 326,
+    "level": 3,
+    "content": "E-5-03, Allowable Bankruptcy Fees (02/12/2020)",
+    "page_no": 532,
+    "parent_toc_id": 323
+  },
+  {
+    "toc_id": 327,
+    "level": 3,
+    "content": "E-5-04, Allowable Foreclosure Fees (02/12/2020)",
+    "page_no": 533,
+    "parent_toc_id": 323
+  },
+  {
+    "toc_id": 328,
+    "level": 3,
+    "content": "E-5-05, Reimbursing Law Firms/Reimbursement of Uncollected Fees, Costs or Advances (02/12/2020)",
+    "page_no": 537,
+    "parent_toc_id": 323
+  },
+  {
+    "toc_id": 329,
+    "level": 3,
+    "content": "E-5-06, Technology Fees and Electronic Invoicing (11/12/2014)",
+    "page_no": 542,
+    "parent_toc_id": 323
+  },
+  {
+    "toc_id": 330,
+    "level": 3,
+    "content": "E-5-07, Other Reimbursable Default-Related Legal Expenses (10/11/2017)",
+    "page_no": 543,
+    "parent_toc_id": 323
+  },
+  {
+    "toc_id": 331,
+    "level": 1,
+    "content": "Part F, Servicing Guide Procedures, Exhibits, and Quick Reference Materials",
+    "page_no": 549,
+    "parent_toc_id": -1
+  },
+  {
+    "toc_id": 332,
+    "level": 2,
+    "content": "Chapter F-1, Servicing Guide Procedures",
+    "page_no": 550,
+    "parent_toc_id": 331
+  },
+  {
+    "toc_id": 333,
+    "level": 3,
+    "content": "F-1-01, Servicing ARM Loans (04/12/2017)",
+    "page_no": 550,
+    "parent_toc_id": 332
+  },
+  {
+    "toc_id": 334,
+    "level": 3,
+    "content": "F-1-02, Escrow, Taxes, Assessments, and Insurance (12/08/2021)",
+    "page_no": 563,
+    "parent_toc_id": 332
+  },
+  {
+    "toc_id": 335,
+    "level": 3,
+    "content": "F-1-03, Establishing and Implementing Custodial Accounts (05/11/2022)",
+    "page_no": 566,
+    "parent_toc_id": 332
+  },
+  {
+    "toc_id": 336,
+    "level": 3,
+    "content": "F-1-04, Evaluating a Request for the Release, or Partial Release, of Property Securing a Mortgage Loan (06/12/2019)",
+    "page_no": 574,
+    "parent_toc_id": 332
+  },
+  {
+    "toc_id": 337,
+    "level": 3,
+    "content": "F-1-05, Expense Reimbursement (02/09/2022)",
+    "page_no": 579,
+    "parent_toc_id": 332
+  },
+  {
+    "toc_id": 338,
+    "level": 3,
+    "content": "F-1-06, Filing an MI Claim for a Liquidated Mortgage Loan or Acquired Property (07/14/2021)",
+    "page_no": 595,
+    "parent_toc_id": 332
+  },
+  {
+    "toc_id": 339,
+    "level": 3,
+    "content": "F-1-07, Handling Property Forfeitures and Seizures (11/12/2014)",
+    "page_no": 604,
+    "parent_toc_id": 332
+  },
+  {
+    "toc_id": 340,
+    "level": 3,
+    "content": "F-1-08, Managing Foreclosure Proceedings (11/14/2018)",
+    "page_no": 607,
+    "parent_toc_id": 332
+  },
+  {
+    "toc_id": 341,
+    "level": 3,
+    "content": "F-1-09, Processing Mortgage Loan Payments and Payoffs (10/19/2016)",
+    "page_no": 611,
+    "parent_toc_id": 332
+  },
+  {
+    "toc_id": 342,
+    "level": 3,
+    "content": "F-1-10, Obtaining and Executing Legal Documents (05/15/2019)",
+    "page_no": 617,
+    "parent_toc_id": 332
+  },
+  {
+    "toc_id": 343,
+    "level": 3,
+    "content": "F-1-11, Post-Delivery Servicing Transfers (05/11/2022)",
+    "page_no": 624,
+    "parent_toc_id": 332
+  },
+  {
+    "toc_id": 344,
+    "level": 3,
+    "content": "F-1-12, Preparing to Implement a Workout Option (06/10/2020)",
+    "page_no": 635,
+    "parent_toc_id": 332
+  },
+  {
+    "toc_id": 345,
+    "level": 3,
+    "content": "F-1-13, Processing a Fannie Mae Mortgage Release (Deed-In-Lieu of Foreclosure) (06/08/2022)",
+    "page_no": 639,
+    "parent_toc_id": 332
+  },
+  {
+    "toc_id": 346,
+    "level": 3,
+    "content": "F-1-14, Processing a Fannie Mae Short Sale (06/08/2022)",
+    "page_no": 645,
+    "parent_toc_id": 332
+  },
+  {
+    "toc_id": 347,
+    "level": 3,
+    "content": "F-1-15, Processing a Government Mortgage Loan Modification (07/08/2015)",
+    "page_no": 647,
+    "parent_toc_id": 332
+  },
+  {
+    "toc_id": 348,
+    "level": 3,
+    "content": "F-1-16, Processing a Repayment Plan (05/10/2017)",
+    "page_no": 649,
+    "parent_toc_id": 332
+  },
+  {
+    "toc_id": 349,
+    "level": 3,
+    "content": "F-1-17, Processing a Transfer of Ownership (04/13/2022)",
+    "page_no": 650,
+    "parent_toc_id": 332
+  },
+  {
+    "toc_id": 350,
+    "level": 3,
+    "content": "F-1-18, Processing a Workout Incentive Fee (09/09/2020)",
+    "page_no": 658,
+    "parent_toc_id": 332
+  },
+  {
+    "toc_id": 351,
+    "level": 3,
+    "content": "F-1-19, Processing a Military Indulgence (06/13/2018)",
+    "page_no": 664,
+    "parent_toc_id": 332
+  },
+  {
+    "toc_id": 352,
+    "level": 3,
+    "content": "F-1-20, Remitting and Accounting to Fannie Mae (05/11/2022)",
+    "page_no": 672,
+    "parent_toc_id": 332
+  },
+  {
+    "toc_id": 353,
+    "level": 3,
+    "content": "F-1-21, Reporting a Delinquent Mortgage Loan via Fannie Mae’s Servicing Solutions System (07/14/2021)",
+    "page_no": 683,
+    "parent_toc_id": 332
+  },
+  {
+    "toc_id": 354,
+    "level": 3,
+    "content": "F-1-22, Reporting a Workout Option via Fannie Mae’s Servicing Solutions System (09/08/2021)",
+    "page_no": 699,
+    "parent_toc_id": 332
+  },
+  {
+    "toc_id": 355,
+    "level": 3,
+    "content": "F-1-23, Reporting to Third Parties (06/09/2021)",
+    "page_no": 705,
+    "parent_toc_id": 332
+  },
+  {
+    "toc_id": 356,
+    "level": 3,
+    "content": "F-1-24, Requesting Fannie Mae’s Approval via Fannie Mae’s Servicing Solutions System (06/08/2022)",
+    "page_no": 706,
+    "parent_toc_id": 332
+  },
+  {
+    "toc_id": 357,
+    "level": 3,
+    "content": "F-1-25, Reclassifying or Voluntary Repurchasing an MBS Mortgage Loan (01/20/2021)",
+    "page_no": 714,
+    "parent_toc_id": 332
+  },
+  {
+    "toc_id": 358,
+    "level": 3,
+    "content": "F-1-26, Servicing eMortgages (10/19/2016)",
+    "page_no": 719,
+    "parent_toc_id": 332
+  },
+  {
+    "toc_id": 359,
+    "level": 3,
+    "content": "F-1-27, Processing a Fannie Mae Flex Modification (06/09/2021)",
+    "page_no": 722,
+    "parent_toc_id": 332
+  },
+  {
+    "toc_id": 360,
+    "level": 3,
+    "content": "F-1-28, Reviewing a Transfer of Ownership for Credit and Financial Capacity (06/12/2019)",
+    "page_no": 731,
+    "parent_toc_id": 332
+  },
+  {
+    "toc_id": 361,
+    "level": 2,
+    "content": "Chapter F-2, Exhibits",
+    "page_no": 733,
+    "parent_toc_id": 331
+  },
+  {
+    "toc_id": 362,
+    "level": 3,
+    "content": "F-2-01, Bankruptcy Referral and Completion Timelines (11/12/2014)",
+    "page_no": 733,
+    "parent_toc_id": 361
+  },
+  {
+    "toc_id": 363,
+    "level": 3,
+    "content": "F-2-02, Incentive Fees for Workout Options (12/09/2020)",
+    "page_no": 735,
+    "parent_toc_id": 361
+  },
+  {
+    "toc_id": 364,
+    "level": 3,
+    "content": "F-2-03, Compensatory Fee Calculation Examples (02/13/2019)",
+    "page_no": 739,
+    "parent_toc_id": 361
+  },
+  {
+    "toc_id": 365,
+    "level": 3,
+    "content": "F-2-04, Firm Minimum Requirements (11/12/2014)",
+    "page_no": 741,
+    "parent_toc_id": 361
+  },
+  {
+    "toc_id": 366,
+    "level": 3,
+    "content": "F-2-05, Historical Yield Differential Adjustment Provisions (08/16/2017)",
+    "page_no": 752,
+    "parent_toc_id": 361
+  },
+  {
+    "toc_id": 367,
+    "level": 3,
+    "content": "F-2-06, Mortgage Insurer Delegations for Workout Options (02/09/2022)",
+    "page_no": 755,
+    "parent_toc_id": 361
+  },
+  {
+    "toc_id": 368,
+    "level": 3,
+    "content": "F-2-07, Reporting the Principal Amount for Mortgage Loans with Principal Forbearance (09/09/2020)",
+    "page_no": 756,
+    "parent_toc_id": 361
+  },
+  {
+    "toc_id": 369,
+    "level": 3,
+    "content": "F-2-08, Servicing Fees for MBS Mortgage Loans (09/11/2019)",
+    "page_no": 758,
+    "parent_toc_id": 361
+  },
+  {
+    "toc_id": 370,
+    "level": 3,
+    "content": "F-2-09, Servicing Fees for Portfolio Mortgage Loans (09/11/2019)",
+    "page_no": 759,
+    "parent_toc_id": 361
+  },
+  {
+    "toc_id": 371,
+    "level": 3,
+    "content": "F-2-10, Fannie Mae’s Workout Hierarchy (12/09/2020)",
+    "page_no": 761,
+    "parent_toc_id": 361
+  },
+  {
+    "toc_id": 372,
+    "level": 3,
+    "content": "F-2-11, Payment Deferral Delinquency Eligibility Examples (12/09/2020)",
+    "page_no": 763,
+    "parent_toc_id": 361
+  },
+  {
+    "toc_id": 373,
+    "level": 2,
+    "content": "Chapter F-3, Acronyms and Glossary of Defined Terms",
+    "page_no": 765,
+    "parent_toc_id": 331
+  },
+  {
+    "toc_id": 374,
+    "level": 3,
+    "content": "F-3-01, Acronyms and Glossary of Defined Terms: A (11/08/2017)",
+    "page_no": 766,
+    "parent_toc_id": 373
+  },
+  {
+    "toc_id": 375,
+    "level": 3,
+    "content": "F-3-02, Acronyms and Glossary of Defined Terms: B (11/12/2014)",
+    "page_no": 768,
+    "parent_toc_id": 373
+  },
+  {
+    "toc_id": 376,
+    "level": 3,
+    "content": "F-3-03, Acronyms and Glossary of Defined Terms: C (05/11/2022)",
+    "page_no": 769,
+    "parent_toc_id": 373
+  },
+  {
+    "toc_id": 377,
+    "level": 3,
+    "content": "F-3-04, Acronyms and Glossary of Defined Terms: D (08/17/2016)",
+    "page_no": 772,
+    "parent_toc_id": 373
+  },
+  {
+    "toc_id": 378,
+    "level": 3,
+    "content": "F-3-05, Acronyms and Glossary of Defined Terms: E (10/19/2016)",
+    "page_no": 773,
+    "parent_toc_id": 373
+  },
+  {
+    "toc_id": 379,
+    "level": 3,
+    "content": "F-3-06, Acronyms and Glossary of Defined Terms: F (06/08/2022)",
+    "page_no": 774,
+    "parent_toc_id": 373
+  },
+  {
+    "toc_id": 380,
+    "level": 3,
+    "content": "F-3-07, Acronyms and Glossary of Defined Terms: G (06/08/2022)",
+    "page_no": 776,
+    "parent_toc_id": 373
+  },
+  {
+    "toc_id": 381,
+    "level": 3,
+    "content": "F-3-08, Acronyms and Glossary of Defined Terms: H (06/08/2016)",
+    "page_no": 776,
+    "parent_toc_id": 373
+  },
+  {
+    "toc_id": 382,
+    "level": 3,
+    "content": "F-3-09, Acronyms and Glossary of Defined Terms: I (08/17/2016)",
+    "page_no": 777,
+    "parent_toc_id": 373
+  },
+  {
+    "toc_id": 383,
+    "level": 3,
+    "content": "F-3-10, Acronyms and Glossary of Defined Terms: J (11/12/2014)",
+    "page_no": 779,
+    "parent_toc_id": 373
+  },
+  {
+    "toc_id": 384,
+    "level": 3,
+    "content": "F-3-11, Acronyms and Glossary of Defined Terms: K (11/12/2014)",
+    "page_no": 779,
+    "parent_toc_id": 373
+  },
+  {
+    "toc_id": 385,
+    "level": 3,
+    "content": "F-3-12, Acronyms and Glossary of Defined Terms: L (11/12/2014)",
+    "page_no": 779,
+    "parent_toc_id": 373
+  },
+  {
+    "toc_id": 386,
+    "level": 3,
+    "content": "F-3-13, Acronyms and Glossary of Defined Terms: M (07/14/2021)",
+    "page_no": 781,
+    "parent_toc_id": 373
+  },
+  {
+    "toc_id": 387,
+    "level": 3,
+    "content": "F-3-14, Acronyms and Glossary of Defined Terms: N (09/13/2017)",
+    "page_no": 785,
+    "parent_toc_id": 373
+  },
+  {
+    "toc_id": 388,
+    "level": 3,
+    "content": "F-3-15, Acronyms and Glossary of Defined Terms: O (06/10/2015)",
+    "page_no": 785,
+    "parent_toc_id": 373
+  },
+  {
+    "toc_id": 389,
+    "level": 3,
+    "content": "F-3-16, Acronyms and Glossary of Defined Terms: P (07/14/2021)",
+    "page_no": 786,
+    "parent_toc_id": 373
+  },
+  {
+    "toc_id": 390,
+    "level": 3,
+    "content": "F-3-17, Acronyms and Glossary of Defined Terms: Q (11/12/2014)",
+    "page_no": 789,
+    "parent_toc_id": 373
+  },
+  {
+    "toc_id": 391,
+    "level": 3,
+    "content": "F-3-18, Acronyms and Glossary of Defined Terms: R (10/13/2021)",
+    "page_no": 789,
+    "parent_toc_id": 373
+  },
+  {
+    "toc_id": 392,
+    "level": 3,
+    "content": "F-3-19, Acronyms and Glossary of Defined Terms: S (09/09/2020)",
+    "page_no": 793,
+    "parent_toc_id": 373
+  },
+  {
+    "toc_id": 393,
+    "level": 3,
+    "content": "F-3-20, Acronyms and Glossary of Defined Terms: T (11/08/2017)",
+    "page_no": 797,
+    "parent_toc_id": 373
+  },
+  {
+    "toc_id": 394,
+    "level": 3,
+    "content": "F-3-21, Acronyms and Glossary of Defined Terms: U (05/15/2019)",
+    "page_no": 798,
+    "parent_toc_id": 373
+  },
+  {
+    "toc_id": 395,
+    "level": 3,
+    "content": "F-3-22, Acronyms and Glossary of Defined Terms: V (11/12/2014)",
+    "page_no": 799,
+    "parent_toc_id": 373
+  },
+  {
+    "toc_id": 396,
+    "level": 3,
+    "content": "F-3-23, Acronyms and Glossary of Defined Terms: W (11/12/2014)",
+    "page_no": 799,
+    "parent_toc_id": 373
+  },
+  {
+    "toc_id": 397,
+    "level": 3,
+    "content": "F-3-24, Acronyms and Glossary of Defined Terms: X (11/12/2014)",
+    "page_no": 800,
+    "parent_toc_id": 373
+  },
+  {
+    "toc_id": 398,
+    "level": 3,
+    "content": "F-3-25, Acronyms and Glossary of Defined Terms: Y (11/12/2014)",
+    "page_no": 800,
+    "parent_toc_id": 373
+  },
+  {
+    "toc_id": 399,
+    "level": 3,
+    "content": "F-3-26, Acronyms and Glossary of Defined Terms: Z (11/12/2014)",
+    "page_no": 801,
+    "parent_toc_id": 373
+  },
+  {
+    "toc_id": 400,
+    "level": 2,
+    "content": "Chapter F-4, Servicing Guide Resources",
+    "page_no": 801,
+    "parent_toc_id": 331
+  },
+  {
+    "toc_id": 401,
+    "level": 3,
+    "content": "F-4-01, References to Fannie Mae's Website (06/08/2022)",
+    "page_no": 801,
+    "parent_toc_id": 400
+  },
+  {
+    "toc_id": 402,
+    "level": 3,
+    "content": "F-4-02, List of Contacts (02/09/2022)",
+    "page_no": 803,
+    "parent_toc_id": 400
+  },
+  {
+    "toc_id": 403,
+    "level": 3,
+    "content": "F-4-03, List of Lender Contracts (06/13/2018)",
+    "page_no": 808,
+    "parent_toc_id": 400
+  }
+]

@@ -6,7 +6,7 @@ import { IconButton } from "@mui/material";
 const RenderTree = (props: any) => {
   const { data, parentSectionId, expanded, handleClose, handleOpen } = props;
   const getChild: any = (data: any, checkId: any) => {
-    return data.filter((section: any) => section.parent_section_id === checkId);
+    return data.filter((section: any) => section.parent_toc_id === checkId);
   };
   const children = useMemo(
     () => getChild(data, parentSectionId),
@@ -26,12 +26,12 @@ const RenderTree = (props: any) => {
     <div className={`level-${props.level ? props.level : 0}`}>
       {children.map((child: any) => (
         <div
-          key={child.section_id}
-          id={`section${child.section_id}`}
+          key={child.toc_id}
+          id={`section${child.toc_id}`}
           className={`item
            ${
-             expanded.includes(`section${child.section_id}`) &&
-             getChild(data, child.section_id).length
+             expanded.includes(`section${child.toc_id}`) &&
+             getChild(data, child.toc_id).length
                ? "parent"
                : expanded.includes(`section${parentSectionId}`)
                ? "child"
@@ -40,12 +40,12 @@ const RenderTree = (props: any) => {
           onClick={() => (child.map ? scrollToElement(child.map) : null)}
 
         >
-          {getChild(data, child.section_id).length ? (
-            expanded.includes(`section${child.section_id}`) ? (
+          {getChild(data, child.toc_id).length ? (
+            expanded.includes(`section${child.toc_id}`) ? (
               <IconButton
                 aria-label="delete"
                 size="small"
-                onClick={() => handleClose(`section${child.section_id}`)}
+                onClick={() => handleClose(`section${child.toc_id}`)}
               >
                 <ExpandMoreIcon fontSize="inherit" color="info" />
               </IconButton>
@@ -53,22 +53,22 @@ const RenderTree = (props: any) => {
               <IconButton
                 aria-label="delete"
                 size="small"
-                onClick={() => handleOpen(`section${child.section_id}`)}
+                onClick={() => handleOpen(`section${child.toc_id}`)}
               >
                 <ChevronRightIcon fontSize="inherit" color="info" />
               </IconButton>
             )
           ) : null}
 
-          {child.section_name}
-          {expanded.includes(`section${child.section_id}`) ? (
+          {child.content}
+          {expanded.includes(`section${child.toc_id}`) ? (
             <RenderTree
               data={data}
-              parentSectionId={child.section_id}
+              parentSectionId={child.toc_id}
               expanded={expanded}
               handleClose={handleClose}
               handleOpen={handleOpen}
-              level={child.toc_level}
+              level={child.level}
             />
           ) : null}
         </div>

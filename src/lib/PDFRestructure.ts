@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import * as XLSX from 'xlsx';
+import * as XLSX from "xlsx";
 import Stack from "../hooks/newStack";
 
 const PDFRestructure = (data: any) => {
@@ -39,26 +39,42 @@ export const PageRelation = (data: any) => {};
 interface StackElement {
   id: number;
   level: number;
+  index: number;
 }
 
 export const SectionRelation = (data: any) => {
   let final: any = [...data];
   let level: any = new Stack<StackElement>();
 
-  level.push({ id: -1, level: -1 });
+  final = final.filter((row: any) => row.Text !== null);
+  let cur_index = 0;
+  level.push({ id: -1, level: -1, index: 0 });
 
   final = final.map((row: any) => {
     if (row.heading_level_dept !== -1) {
+      //heading_level_dept,pdf_row_id
       let cur = level.peek();
+
+      if (cur.level < row.heading_level_dept) {
+        cur_index = 0;
+      }
+
+      console.log(cur, cur_index, cur.level, row.heading_level_dept);
+
       while (cur.level >= row.heading_level_dept) {
         level.pop();
         cur = level.peek();
       }
+      cur_index = cur.index + 1;
 
-      level.push({ id: row.pdf_row_id, level: row.heading_level_dept });
-      return { ...row, parent_pdf_row_id: cur.id };
+      level.push({
+        id: row.pdf_row_id,
+        level: row.heading_level_dept,
+        index: cur_index,
+      });
+      return { ...row, parent_pdf_row_id: cur.id, index_id: cur.index };
     } else {
-      return { ...row, parent_pdf_row_id: -1 };
+      return { ...row, parent_pdf_row_id: -1, index_id: 0 };
     }
   });
   console.log(final);
@@ -101,7 +117,7 @@ export const downloadJsonFile: any = (data: any, filename: any) => {
   URL.revokeObjectURL(url);
 };
 
-export const downloadExcel = (data:any) => {
+export const downloadExcel = (data: any) => {
   const worksheet = XLSX.utils.json_to_sheet(data);
   const workbook = XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(workbook, worksheet, "Sheet1");

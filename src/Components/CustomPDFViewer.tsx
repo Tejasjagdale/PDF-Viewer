@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import structured_data2 from "../lib/assets/backlog/raw/filtered3.json";
-import structured_data3 from "../lib/assets/backlog/current/filtered_dnd3.json";
+import structured_data3 from "../lib/assets/backlog/current/filtered_index3.json";
 import "./Combined.css";
 import HtmlTagMapper from "../lib/HtmlTagMapper";
 import ContextMenu from "./Common/ContexMenu";
@@ -18,7 +18,7 @@ import CSSMapper from "../lib/CSSMapper";
 import RenderSecion from "./RenderSection";
 
 const CustomPDFViewer = (props: any) => {
-  const [data, setData] = useState<any>(structured_data2);
+  const [data, setData] = useState<any>(structured_data3);
   const [curElement, setCurElement] = useState<any>(null);
   const [expanded, setExpanded] = useState<any>([]);
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -44,14 +44,35 @@ const CustomPDFViewer = (props: any) => {
     event.stopPropagation();
     setAnchorEl(event?.currentTarget);
     const element = event.currentTarget;
-    const ele = document.getElementsByClassName("selected")
+    const ele = document.getElementsByClassName("selected");
     if (ele.length) {
-      ele[0].classList.remove("selected")
+      ele[0].classList.remove("selected");
     }
 
     element.classList.add("selected");
     setCurElement(element);
   };
+
+  function handleDragDrop(result: any) {
+    if (!result.destination) return;
+    let { destination, draggableId, source } = result;
+    console.log(destination, draggableId, source);
+    let newParent = parseInt(destination.droppableId.replace('area', ''));
+    let curId = parseInt(draggableId.replace('section', ''));
+    let temp = [...data];
+
+    temp = temp.map((row: any,index:number) => {
+      // if(row.pdf_row_id === newParent)
+      if (row.pdf_row_id === curId) {
+        console.log({ ...row, parent_pdf_row_id: newParent })
+        return { ...row, parent_pdf_row_id: newParent };
+      }
+      return row;
+    });
+
+    console.log(newParent,curId,temp);
+    setData(temp)
+  }
 
   const open = Boolean(anchorEl);
   const id = open ? "simple-popper" : undefined;
@@ -69,11 +90,14 @@ const CustomPDFViewer = (props: any) => {
         <RenderSecion
           data={data}
           parentId={-1}
-          children={data.filter((section: any) => section.parent_pdf_row_id === -1)}
+          children={data.filter(
+            (section: any) => section.parent_pdf_row_id === -1
+          )}
           expanded={expanded}
           handleClose={handleClose}
           handleOpen={handleOpen}
           handleClick={handleClick}
+          handleDragDrop={handleDragDrop}
         />
       </div>
     </>
