@@ -1,23 +1,25 @@
 import React, { useEffect, useState, useMemo } from "react";
 // import raw_data from "../../lib/assets/backlog/current/filtered_parentId3.json";
-import cur_raw from "../../lib/assets/backlog/raw/filtered_null3.json"
+import cur_raw from "../../lib/assets/backlog/raw/filtered3.json"
 import new_data from "../../lib/assets/backlog/raw/filtered_excel3.json";
-import raw_data from "../../lib/assets/backlog/raw/type5.json"
+import raw_data from "../../lib/assets/backlog/current/test.json"
 import RenderTree from "../../Components/RenderTree";
 import PDFRestructure, {
   FilterNull,
   SectionRelation,
   TagsHierarchy,
+  addIndex,
   buildTree,
   downloadExcel,
   downloadJsonFile,
+  sortPDFRows,
 } from "../../lib/PDFRestructure";
 import RenderSecion from "../../Components/RenderSection";
 
 const Login = () => {
-  const [data, setData] = useState<any>(cur_raw);
+  const [data, setData] = useState<any>(raw_data);
   useEffect(() => {
-    setData(SectionRelation(data));
+    setData(sortPDFRows(data));
   }, []);
 
   const [expanded, setExpanded] = useState<any>([]);

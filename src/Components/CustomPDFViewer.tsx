@@ -16,6 +16,7 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import Annotations from "./Common/Annotations";
 import CSSMapper from "../lib/CSSMapper";
 import RenderSecion from "./RenderSection";
+import { getChild } from "../lib/PDFRestructure";
 
 const CustomPDFViewer = (props: any) => {
   const [data, setData] = useState<any>(structured_data3);
@@ -57,20 +58,42 @@ const CustomPDFViewer = (props: any) => {
     if (!result.destination) return;
     let { destination, draggableId, source } = result;
     console.log(destination, draggableId, source);
+    let newIndex = destination.index
+    let oldIndex = source.index
     let newParent = parseInt(destination.droppableId.replace('area', ''));
+    let oldParent = parseInt(source.droppableId.replace('area', ''));
     let curId = parseInt(draggableId.replace('section', ''));
     let temp = [...data];
 
-    temp = temp.map((row: any,index:number) => {
-      // if(row.pdf_row_id === newParent)
+    temp = temp.map((row: any, index: number) => {
       if (row.pdf_row_id === curId) {
-        console.log({ ...row, parent_pdf_row_id: newParent })
-        return { ...row, parent_pdf_row_id: newParent };
+        return { ...row, parent_pdf_row_id: newParent, index_id: newIndex };
       }
       return row;
     });
+    // temp.sort((a: any, b: any) => a.index_id - b.index_id);
 
-    console.log(newParent,curId,temp);
+    let oldChildren = getChild(temp, oldParent)
+
+
+    temp = temp.map((row2: any) => {
+
+      for (let i = 0; i < oldChildren.length; i++) {
+        const row = oldChildren[i];
+
+        if (row2.pdf_row_id === row.pdf_row_id) {
+          console.log(row2.pdf_row_id, row.pdf_row_id, i)
+          return { ...row2, index_id: i }
+        }
+      }
+
+      return row2
+    })
+
+    // let newChildren = getChild(temp, oldParent)
+    // newChildren.map((row: any, index: any) => { return { ...row, index_id: index } })
+
+    console.log(oldChildren, newParent, curId, temp);
     setData(temp)
   }
 

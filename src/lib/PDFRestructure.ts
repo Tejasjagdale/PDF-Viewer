@@ -77,7 +77,45 @@ export const SectionRelation = (data: any) => {
       return { ...row, parent_pdf_row_id: -1, index_id: 0 };
     }
   });
-  console.log(final);
+  return final;
+};
+
+export const addIndex = (data: any) => {
+  let final: any = [...data];
+  let level: any = new Stack<StackElement>();
+
+  let cur_index = 0;
+  level.push({ id: 1, level: -2, index: -1 });
+
+  final = final.map((row: any) => {
+    //heading_level_dept,pdf_row_id
+    let cur = level.peek();
+
+    while (cur.level > row.heading_level_dept) {
+      level.pop();
+      cur = level.peek();
+    }
+
+    if (cur.level < row.heading_level_dept && cur.level !== -1) {
+      cur_index = 0;
+    } else {
+      cur_index = cur.index + 1;
+    }
+
+    if (cur.level === row.heading_level_dept) {
+      level.pop();
+    }
+
+    level.push({
+      id: row.pdf_row_id,
+      level: row.heading_level_dept,
+      index: cur_index,
+    });
+
+    console.log(cur, cur_index, cur.level, row.heading_level_dept);
+
+    return { ...row, index_id: cur_index };
+  });
   return final;
 };
 
@@ -101,6 +139,37 @@ export const buildTree = (data: any) => {
   });
   console.log(tree);
   return tree;
+};
+
+export function sortPDFRows(data: any): any {
+  const sortedData: any = [...data];
+
+  sortedData.sort((a: any, b: any) => {
+    // First, compare by level
+    if (a.pdf_row_id < b.pdf_row_id) {
+      return -1;
+    }
+    if (a.pdf_row_id > b.pdf_row_id) {
+      return 1;
+    }
+
+    // If levels are the same, compare by index_id
+    if (a.index_id < b.index_id) {
+      return -1;
+    }
+    if (a.index_id > b.index_id) {
+      return 1;
+    }
+
+    // Items are identical
+    return 0;
+  });
+  console.log(sortedData);
+  return sortedData;
+}
+
+export const getChild: any = (data: any, checkId: any) => {
+  return data.filter((section: any) => section.parent_pdf_row_id === checkId);
 };
 
 export const downloadJsonFile: any = (data: any, filename: any) => {

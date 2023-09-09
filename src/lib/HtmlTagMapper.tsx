@@ -135,7 +135,7 @@ export const HtmlTagMapper = (props: any) => {
       </div>
 
       
-      <div className="centerTop" style={{ width: "90%", height: "100%" }}> {tag}</div>
+      <div className="centerTop" style={{ width: "90%", height: "100%" }}>{row.index_id} {tag}</div>
     </div>
   );
 };

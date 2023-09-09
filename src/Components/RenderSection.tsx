@@ -6,10 +6,7 @@ import HtmlTagMapper from "../lib/HtmlTagMapper";
 import CSSMapper from "../lib/CSSMapper";
 import DragIndicatorIcon from "@mui/icons-material/DragIndicator";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
-
-const getChild: any = (data: any, checkId: any) => {
-  return data.filter((section: any) => section.parent_pdf_row_id === checkId);
-};
+import { getChild } from "../lib/PDFRestructure";
 
 const RenderSection = (props: any) => {
   const {

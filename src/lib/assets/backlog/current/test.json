@@ -1,0 +1,19 @@
+[
+  { "level": 0, "index_id": 0, "pdf_row_id": 1, "parent_pdf_row_id": -1 },
+  { "level": 0, "index_id": 1, "pdf_row_id": 2, "parent_pdf_row_id": -1 },
+  { "level": 0, "index_id": 2, "pdf_row_id": 3, "parent_pdf_row_id": -1 },
+  { "level": 0, "index_id": 3, "pdf_row_id": 4, "parent_pdf_row_id": -1 },
+  { "level": 0, "index_id": 4, "pdf_row_id": 5, "parent_pdf_row_id": -1 },
+  { "level": 0, "index_id": 5, "pdf_row_id": 6, "parent_pdf_row_id": -1 },
+  { "level": 1, "index_id": 0, "pdf_row_id": 7, "parent_pdf_row_id": 6 },
+  { "level": 2, "index_id": 0, "pdf_row_id": 8, "parent_pdf_row_id": 7 },
+  { "level": 2, "index_id": 1, "pdf_row_id": 9, "parent_pdf_row_id": 7 },
+  { "level": 2, "index_id": 2, "pdf_row_id": 10, "parent_pdf_row_id": 7 },
+  { "level": 3, "index_id": 0, "pdf_row_id": 11, "parent_pdf_row_id": 10 },
+  { "level": 3, "index_id": 1, "pdf_row_id": 12, "parent_pdf_row_id": 10 },
+  { "level": 4, "index_id": 0, "pdf_row_id": 13, "parent_pdf_row_id": 12 },
+  { "level": 4, "index_id": 1, "pdf_row_id": 14, "parent_pdf_row_id": 12 },
+  { "level": 4, "index_id": 2, "pdf_row_id": 15, "parent_pdf_row_id": 12 },
+  { "level": 1, "index_id": 1, "pdf_row_id": 16, "parent_pdf_row_id": 6 },
+  { "level": 1, "index_id": 2, "pdf_row_id": 17, "parent_pdf_row_id": 6 }
+]
