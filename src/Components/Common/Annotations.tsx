@@ -24,7 +24,7 @@ const Annotations = (props: any) => {
         open={props.open}
         anchorEl={props.anchorEl}
         sx={{ zIndex: 51 }}
-        placement={"top"}
+        placement={"top-end"}
         modifiers={[
           {
             name: "arrow",
@@ -35,13 +35,13 @@ const Annotations = (props: any) => {
           },
         ]}
       >
-        <Box sx={{ bgcolor: "#555555", padding: "5px" }}>
+        <Box sx={{ bgcolor: "white", boxShadow:"0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2)", padding: "2px" }}>
           <Stack direction="row">
             <Box
               sx={{
-                borderRight: "1px solid white",
-                padding: "0px 10px",
-                color: "white",
+                // borderRight: "1px solid white",
+                // padding: "0px 2px",
+                color: "#555555",
               }}
             >
               {props.flag ? (
@@ -50,8 +50,9 @@ const Annotations = (props: any) => {
                     color="primary"
                     aria-label="Edit section"
                     size="small"
+                    sx={{fontSize:"12px"}}
                   >
-                    <EditIcon fontSize="inherit" color="info" />
+                    <EditIcon fontSize="inherit" color="primary" />
                   </IconButton>
                 </Tooltip>
               ) : (
@@ -66,9 +67,9 @@ const Annotations = (props: any) => {
             </Box>
             <Box
               sx={{
-                borderRight: "1px solid white",
-                padding: "0px 10px",
-                color: "white",
+                // borderRight: "1px solid white",
+                // padding: "0px 2px",
+                color: "#555555",
               }}
               onClick={() => {
                 props.curElement.remove();
@@ -80,8 +81,9 @@ const Annotations = (props: any) => {
                     color="primary"
                     aria-label="add to shopping cart"
                     size="small"
+                    sx={{fontSize:"12px"}}
                   >
-                    <BlockIcon fontSize="inherit" color="info" />
+                    <BlockIcon fontSize="inherit" color="primary" />
                   </IconButton>
                 </Tooltip>
               ) : (
@@ -96,9 +98,9 @@ const Annotations = (props: any) => {
             </Box>
             <Box
               sx={{
-                borderRight: "1px solid white",
-                padding: "0px 10px",
-                color: "white",
+                // borderRight: "1px solid white",
+                // padding: "0px 2px",
+                color: "#555555",
               }}
             >
               {props.flag ? (
@@ -107,8 +109,9 @@ const Annotations = (props: any) => {
                     color="primary"
                     aria-label="add to shopping cart"
                     size="small"
+                    sx={{fontSize:"12px"}}
                   >
-                    <AddIcon fontSize="inherit" color="info" />
+                    <AddIcon fontSize="inherit" color="primary" />
                   </IconButton>
                 </Tooltip>
               ) : (
@@ -123,9 +126,9 @@ const Annotations = (props: any) => {
             </Box>
             <Box
               sx={{
-                borderRight: "1px solid white",
-                padding: "0px 10px",
-                color: "white",
+                // borderRight: "1px solid white",
+                // padding: "0px 2px",
+                color: "#555555",
               }}
               onClick={() => {
                 props.curElement.style.paddingLeft = `${
@@ -139,8 +142,9 @@ const Annotations = (props: any) => {
                     color="primary"
                     aria-label="add to shopping cart"
                     size="small"
+                    sx={{fontSize:"12px"}}
                   >
-                    <KeyboardBackspaceIcon fontSize="inherit" color="info" />
+                    <KeyboardBackspaceIcon fontSize="inherit" color="primary" />
                   </IconButton>
                 </Tooltip>
               ) : (
@@ -155,8 +159,8 @@ const Annotations = (props: any) => {
             </Box>
             <Box
               sx={{
-                padding: "0px 10px",
-                color: "white",
+                // padding: "0px 2px",
+                color: "#555555",
               }}
               onClick={() => {
                 props.curElement.style.paddingLeft = `${
@@ -170,8 +174,9 @@ const Annotations = (props: any) => {
                     color="primary"
                     aria-label="move right"
                     size="small"
+                    sx={{fontSize:"12px"}}
                   >
-                    <ArrowRightAltIcon fontSize="inherit" color="info" />
+                    <ArrowRightAltIcon fontSize="inherit" color="primary" />
                   </IconButton>
                 </Tooltip>
               ) : (

@@ -74,6 +74,8 @@ const CustomPDFViewer = (props: any) => {
     // temp.sort((a: any, b: any) => a.index_id - b.index_id);
 
     let oldChildren = getChild(temp, oldParent)
+    let newChildren = getChild(temp, newParent)
+
 
 
     temp = temp.map((row2: any) => {
@@ -82,7 +84,6 @@ const CustomPDFViewer = (props: any) => {
         const row = oldChildren[i];
 
         if (row2.pdf_row_id === row.pdf_row_id) {
-          console.log(row2.pdf_row_id, row.pdf_row_id, i)
           return { ...row2, index_id: i }
         }
       }
@@ -90,7 +91,27 @@ const CustomPDFViewer = (props: any) => {
       return row2
     })
 
-    // let newChildren = getChild(temp, oldParent)
+    temp = temp.map((row2: any) => {
+
+      for (let i = 0; i < newChildren.length; i++) {
+        const row = newChildren[i];
+
+        if (i === newIndex && row2.pdf_row_id === row.pdf_row_id) {
+          if (row.pdf_row_id === curId) {
+            return { ...row2, index_id: newIndex }
+          } else {
+            return { ...row2, index_id: i + 1 }
+          }
+        }
+
+        if (row2.pdf_row_id === row.pdf_row_id) {
+          return { ...row2, index_id: i }
+        }
+      }
+
+      return row2
+    })
+
     // newChildren.map((row: any, index: any) => { return { ...row, index_id: index } })
 
     console.log(oldChildren, newParent, curId, temp);

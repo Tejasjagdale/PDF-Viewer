@@ -10,7 +10,7 @@ const getTag = (props: any) => {
   let dept = row?.heading_level_dept;
   let Text = row.Text;
 
-  Text = `${Text}`;
+  Text = `${row.index_id} ${Text}`;
   const pattern = /^row\d+$/;
 
   switch (tagName) {
@@ -100,7 +100,8 @@ export const HtmlTagMapper = (props: any) => {
         paddingLeft: `${isChild ? 0 : 28}px`,
         cursor:"pointer"
       }}
-      onClick={handleClick}
+      onContextMenu={(event:any)=>{event.preventDefault(); handleClick(event)}}
+      // onClick={handleClick}
     >
       <div className="centerChild" style={{ width: "5%", height: "100%" }}>
         <IconButton
@@ -135,7 +136,7 @@ export const HtmlTagMapper = (props: any) => {
       </div>
 
       
-      <div className="centerTop" style={{ width: "90%", height: "100%" }}>{row.index_id} {tag}</div>
+      <div className="centerTop" style={{ width: "90%", height: "100%" }}> {tag}</div>
     </div>
   );
 };
