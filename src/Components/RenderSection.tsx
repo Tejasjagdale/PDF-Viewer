@@ -17,118 +17,60 @@ const RenderSection = (props: any) => {
     handleClose,
     handleOpen,
     handleDragDrop,
+    handleClick,
+    curElement,
   } = props;
 
   return (
     <>
-      {parentId === -1 ? (
-        <DragDropContext
-          onDragEnd={handleDragDrop}
-          onDragStart={(event: any) => {
-            handleClose(`${event.draggableId}`);
-          }}
-        >
-          <Droppable droppableId={`area${parentId}`} type="group">
-            {(provided: any, snapshot: any) => (
-              <CommonDropable
-                props={props}
-                provided={provided}
-                snapshot={snapshot}
-              />
-            )}
-          </Droppable>
-        </DragDropContext>
-      ) : (
-        <Droppable droppableId={`area${parentId}`} type="group">
-          {(provided: any, snapshot: any) => (
-            <CommonDropable
-              props={props}
-              provided={provided}
-              snapshot={snapshot}
-            />
-          )}
-        </Droppable>
-      )}
-    </>
-  );
-};
-
-const CommonDropable = (props: any) => {
-  const { provided, snapshot } = props;
-  const {
-    data,
-    expanded,
-    children,
-    parentId,
-    handleClose,
-    handleOpen,
-    handleClick,
-    handleDragDrop,
-  } = props.props;
-
-  return (
-    <>
       <div
-        {...provided.dropableProps}
-        ref={provided.innerRef}
         style={{
           paddingBottom: "5px",
-          backgroundColor: `${snapshot.isDraggingOver ? "#E7FFEC" : ""}`,
         }}
       >
         {children.map((row: any, index: any) => {
           return (
-            <Draggable
-              key={`section${row.pdf_row_id}`}
-              draggableId={`section${row.pdf_row_id}`}
-              index={index}
+            <div
+              id={`section${row.pdf_row_id}`}
+              className={`item_sec ${
+                !expanded.includes(`section${row.pdf_row_id}`) &&
+                getChild(data, row.pdf_row_id)?.length
+                  ? "parent_sec"
+                  : !expanded.includes(`section${row.parent_pdf_row_id}`)
+                  ? "child_sec"
+                  : ""
+              }`}
+              // style={{
+              //   backgroundColor: `${snapshot.isDragging ? "red" : ""}`,
+              // }}
             >
-              {(provided: any, snapshot: any) => (
-                <div
-                  {...provided.draggableProps}
-                  ref={provided.innerRef}
-                  id={`section${row.pdf_row_id}`}
-                  className={`item_sec ${
-                    !expanded.includes(`section${row.pdf_row_id}`) &&
-                    getChild(data, row.pdf_row_id)?.length
-                      ? "parent_sec"
-                      : !expanded.includes(`section${row.parent_pdf_row_id}`)
-                      ? "child_sec"
-                      : ""
-                  }`}
-                  // style={{
-                  //   backgroundColor: `${snapshot.isDragging ? "red" : ""}`,
-                  // }}
-                >
-                  <HtmlTagMapper
-                    row={row}
-                    CSS={CSSMapper(row)}
-                    isChild={getChild(data, row.pdf_row_id)?.length}
-                    handleOpen={handleOpen}
-                    handleClose={handleClose}
-                    handleClick={handleClick}
-                    expanded={expanded}
-                    provided={provided}
-                  />
+              <HtmlTagMapper
+                row={row}
+                CSS={CSSMapper(row)}
+                isChild={getChild(data, row.pdf_row_id)?.length}
+                handleOpen={handleOpen}
+                handleClose={handleClose}
+                handleClick={handleClick}
+                curElement={curElement}
+                expanded={expanded}
+              />
 
-                  {!expanded.includes(`section${row.pdf_row_id}`) ? (
-                    <RenderSection
-                      data={data}
-                      expanded={expanded}
-                      children={getChild(data, row.pdf_row_id)}
-                      handleClose={handleClose}
-                      handleOpen={handleOpen}
-                      parentId={row.pdf_row_id}
-                      handleClick={handleClick}
-                      handleDragDrop={handleDragDrop}
-                    />
-                  ) : null}
-                </div>
-              )}
-            </Draggable>
+              {!expanded.includes(`section${row.pdf_row_id}`) ? (
+                <RenderSection
+                  data={data}
+                  expanded={expanded}
+                  children={getChild(data, row.pdf_row_id)}
+                  handleClose={handleClose}
+                  handleOpen={handleOpen}
+                  parentId={row.pdf_row_id}
+                  handleClick={handleClick}
+                  curElement={curElement}
+                  handleDragDrop={handleDragDrop}
+                />
+              ) : null}
+            </div>
           );
         })}
-        {provided.placeholder}
       </div>
     </>
   );

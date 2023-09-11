@@ -53,18 +53,19 @@ const Home = () => {
             boxShadow: "0px 5px rgba(0, 0, 0, 0.2)",
           }}
         >
-          <Header />
+          <Header sideBar={sideBar} setSideBar={setSideBar} />
         </Grid>
         <Grid item md={12}>
           <Grid container sx={{ height: "94vh", width: "100vw" }}>
             <Grid
               item
-              md={2}
+              md={sideBar ? 2 : 0}
               sx={{
                 height: "100%",
                 color: "#fff",
                 background: primary_color,
                 overflowY: "scroll",
+                display: `${sideBar ? "block" : "none"}`,
               }}
             >
               {/* <Sidebar sideBar={sideBar} setSideBar={setSideBar} /> */}
@@ -77,7 +78,7 @@ const Home = () => {
                 handleOpen={handleOpen}
               />
             </Grid>
-            <Grid item md={10} m={0}>
+            <Grid item md={sideBar ? 10 : 12} m={0}>
               <Grid container p={1} sx={{ height: "94vh" }}>
                 <Grid item md={6} sx={{ height: "100%", overflowY: "scroll" }}>
                   <CustomPDFViewer />

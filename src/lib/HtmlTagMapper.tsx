@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, IconButton } from "@mui/material";
+import { Box, IconButton, TextField, TextareaAutosize } from "@mui/material";
 import DragIndicatorIcon from "@mui/icons-material/DragIndicator";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
@@ -22,39 +22,19 @@ const getTag = (props: any) => {
     case "title":
     case "paragraphspan":
     case "sub":
-      return (
-        <div style={CSS} contentEditable>
-          {Text}
-        </div>
-      );
+      return <div style={CSS}>{Text}</div>;
     case "div":
-      return (
-        <div style={CSS} contentEditable >
-          {Text}
-        </div>
-      );
+      return <div style={CSS}>{Text}</div>;
     case "h1":
-      return (
-        <h1 style={CSS} contentEditable >
-          {Text}
-        </h1>
-      );
+      return <h1 style={CSS}>{Text}</h1>;
     case "h2":
-      return (
-        <h2 style={CSS} contentEditable >
-          {Text}
-        </h2>
-      );
+      return <h2 style={CSS}>{Text}</h2>;
     case "h3":
-      return (
-        <h2 style={CSS} contentEditable >
-          {Text}
-        </h2>
-      );
+      return <h2 style={CSS}>{Text}</h2>;
     case "reference":
       return (
         <>
-          <a href="#" style={CSS} contentEditable>
+          <a href="#" style={CSS}>
             {Text}
           </a>
           <br />
@@ -62,18 +42,10 @@ const getTag = (props: any) => {
       );
     case "lbl":
     case "span":
-      return (
-        <span style={CSS} contentEditable >
-          {Text}
-        </span>
-      );
+      return <span style={CSS}>{Text}</span>;
     default:
       if (pattern.test(tagName)) {
-        return (
-          <p style={CSS} contentEditable >
-            {Text}
-          </p>
-        );
+        return <p style={CSS}>{Text}</p>;
       }
 
       return null;
@@ -83,12 +55,13 @@ const getTag = (props: any) => {
 export const HtmlTagMapper = (props: any) => {
   let {
     row,
-    provided,
     isChild,
     expanded,
     handleClose,
     handleOpen,
     handleClick,
+    handleEdit,
+    curElement,
   } = props;
   let tag = getTag(props);
 
@@ -98,21 +71,11 @@ export const HtmlTagMapper = (props: any) => {
         display: "flex",
         zIndex: 20,
         paddingLeft: `${isChild ? 0 : 28}px`,
-        cursor:"pointer"
+        cursor: "pointer",
       }}
-      onContextMenu={(event:any)=>{event.preventDefault(); handleClick(event)}}
-      // onClick={handleClick}
+      // onContextMenu={(event:any)=>{event.preventDefault(); handleClick(event)}}
+      onClick={(event: any) => handleClick(event, row.pdf_row_id)}
     >
-      <div className="centerChild" style={{ width: "5%", height: "100%" }}>
-        <IconButton
-          aria-label="delete"
-          size="small"
-          {...provided.dragHandleProps}
-        >
-          <DragIndicatorIcon fontSize="inherit" color="primary" />
-        </IconButton>
-      </div>
-
       <div className="centerChild" style={{ width: "5%", height: "100%" }}>
         {isChild ? (
           expanded.includes(`section${row.pdf_row_id}`) ? (
@@ -135,8 +98,19 @@ export const HtmlTagMapper = (props: any) => {
         ) : null}
       </div>
 
-      
-      <div className="centerTop" style={{ width: "90%", height: "100%" }}> {tag}</div>
+      <div style={{ width: "100%", height: "100%" }}>
+        {curElement === row.pdf_row_id ? (
+          <TextareaAutosize
+            id="outlined-basic"
+            value={row.Text}
+            onChange={handleEdit}
+            className="editField"
+            style={{ fontSize: `11px` }}
+          />
+        ) : (
+          tag
+        )}
+      </div>
     </div>
   );
 };

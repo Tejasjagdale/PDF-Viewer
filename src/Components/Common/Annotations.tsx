@@ -13,10 +13,104 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import AddIcon from "@mui/icons-material/Add";
+import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
 import BlockIcon from "@mui/icons-material/Block";
 import { IconButton, Stack, Tooltip } from "@mui/material";
+import Stack2 from "../../hooks/newStack";
+import Queue from "../../hooks/newQueue";
+import { getChild } from "../../lib/PDFRestructure";
+interface QueueElement {
+  id: number;
+}
 
 const Annotations = (props: any) => {
+  let { data, setData, curElement } = props;
+
+  const deleteIndex = (data: any, parentId: any) => {
+    let temp = [...data];
+    let Children = getChild(temp, parentId);
+    console.log(Children);
+
+    temp = temp.map((row2: any) => {
+      for (let i = 0; i < Children.length; i++) {
+        const row = Children[i];
+
+        if (row2.pdf_row_id === row.pdf_row_id) {
+          return { ...row2, index_id: i };
+        }
+      }
+
+      return row2;
+    });
+
+    setData(temp);
+  };
+
+  const deleteRow = (id: any) => {
+    let temp = [...data];
+    let parentId = -1;
+    let level: any = new Queue();
+    level.enqueue(id);
+    while (level.size()) {
+      temp = temp.filter((row: any) => {
+        if (row.parent_pdf_row_id === id) {
+          level.enqueue(row.pdf_row_id);
+          return false;
+        }
+
+        if (row.pdf_row_id === id) {
+          parentId = row.parent_pdf_row_id;
+        }
+
+        return row.pdf_row_id !== id;
+      });
+      level.dequeue();
+    }
+
+    setTimeout(() => {
+      deleteIndex(temp, parentId);
+    }, 2000);
+    setData(temp);
+  };
+
+  const addChild = (id: any) => {
+    let temp = [...data];
+    let rowData: any = null;
+    temp.map((row: any) => {
+      if (row.pdf_row_id === id) {
+        rowData = row;
+      }
+    });
+    temp.sort((a, b) => a.pdf_row_id - b.pdf_row_id);
+    let lastEle: any = temp.at(-1);
+
+    rowData["pdf_row_id"] = lastEle.pdf_row_id + 1;
+    rowData["Text"] = "write your text here...";
+    rowData["parent_pdf_row_id"] = id;
+    rowData["index_id"] = 0;
+    // rowData["pdf_row_id"]
+    // rowData["pdf_row_id"]
+    // rowData["pdf_row_id"]
+    // rowData["pdf_row_id"]
+    // rowData["pdf_row_id"]
+    // [,Text,TextSize,"Font.alt_family_name": "Deja Vu Sans Condensed",
+    // "Font.embedded": true,
+    // "Font.encoding": "Identity-H",
+    // "Font.family_name": "Deja Vu Sans Condensed",
+    // "Font.font_type": "CIDFontType2",
+    // "Font.italic": false,
+    // "Font.monospaced": false,
+    // "Font.name": "MPDFAA+DejaVuSansCondensed-Bold",
+    // "Font.subset": true,
+    // "Font.weight": 700,,
+    // ,]
+    temp.push(rowData)
+    // temp.sort((a, b) => a.index_id - b.index_id);
+    setData(temp)
+  };
+
+  const addSibling = () => {};
+
   return (
     <>
       <Popper
@@ -35,7 +129,14 @@ const Annotations = (props: any) => {
           },
         ]}
       >
-        <Box sx={{ bgcolor: "white", boxShadow:"0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2)", padding: "2px" }}>
+        <Box
+          sx={{
+            bgcolor: "white",
+            boxShadow:
+              "0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2)",
+            padding: "2px",
+          }}
+        >
           <Stack direction="row">
             <Box
               sx={{
@@ -50,7 +151,7 @@ const Annotations = (props: any) => {
                     color="primary"
                     aria-label="Edit section"
                     size="small"
-                    sx={{fontSize:"12px"}}
+                    sx={{ fontSize: "12px" }}
                   >
                     <EditIcon fontSize="inherit" color="primary" />
                   </IconButton>
@@ -81,7 +182,7 @@ const Annotations = (props: any) => {
                     color="primary"
                     aria-label="add to shopping cart"
                     size="small"
-                    sx={{fontSize:"12px"}}
+                    sx={{ fontSize: "12px" }}
                   >
                     <BlockIcon fontSize="inherit" color="primary" />
                   </IconButton>
@@ -102,16 +203,81 @@ const Annotations = (props: any) => {
                 // padding: "0px 2px",
                 color: "#555555",
               }}
+              onClick={() => {
+                deleteRow(curElement);
+              }}
             >
               {props.flag ? (
-                <Tooltip title="Add New Section" arrow>
+                <Tooltip title="Delete Section" arrow>
                   <IconButton
                     color="primary"
                     aria-label="add to shopping cart"
                     size="small"
-                    sx={{fontSize:"12px"}}
+                    sx={{ fontSize: "12px" }}
+                  >
+                    <DeleteIcon fontSize="inherit" color="primary" />
+                  </IconButton>
+                </Tooltip>
+              ) : (
+                <Typography
+                  variant="subtitle2"
+                  gutterBottom
+                  className="completeSpace centerChild"
+                >
+                  delete
+                </Typography>
+              )}
+            </Box>
+            <Box
+              sx={{
+                // borderRight: "1px solid white",
+                // padding: "0px 2px",
+                color: "#555555",
+              }}
+              onClick={() => {
+                addChild(curElement);
+              }}
+            >
+              {props.flag ? (
+                <Tooltip title="Add New Child" arrow>
+                  <IconButton
+                    color="primary"
+                    aria-label="add to shopping cart"
+                    size="small"
+                    sx={{ fontSize: "12px" }}
                   >
                     <AddIcon fontSize="inherit" color="primary" />
+                  </IconButton>
+                </Tooltip>
+              ) : (
+                <Typography
+                  variant="subtitle2"
+                  gutterBottom
+                  className="completeSpace centerChild"
+                >
+                  add
+                </Typography>
+              )}
+            </Box>
+            <Box
+              sx={{
+                // borderRight: "1px solid white",
+                // padding: "0px 2px",
+                color: "#555555",
+              }}
+            >
+              {props.flag ? (
+                <Tooltip title="Add New Sibling" arrow>
+                  <IconButton
+                    color="primary"
+                    aria-label="add to shopping cart"
+                    size="small"
+                    sx={{ fontSize: "12px" }}
+                  >
+                    <AddCircleOutlineOutlinedIcon
+                      fontSize="inherit"
+                      color="primary"
+                    />
                   </IconButton>
                 </Tooltip>
               ) : (
@@ -142,7 +308,7 @@ const Annotations = (props: any) => {
                     color="primary"
                     aria-label="add to shopping cart"
                     size="small"
-                    sx={{fontSize:"12px"}}
+                    sx={{ fontSize: "12px" }}
                   >
                     <KeyboardBackspaceIcon fontSize="inherit" color="primary" />
                   </IconButton>
@@ -174,7 +340,7 @@ const Annotations = (props: any) => {
                     color="primary"
                     aria-label="move right"
                     size="small"
-                    sx={{fontSize:"12px"}}
+                    sx={{ fontSize: "12px" }}
                   >
                     <ArrowRightAltIcon fontSize="inherit" color="primary" />
                   </IconButton>

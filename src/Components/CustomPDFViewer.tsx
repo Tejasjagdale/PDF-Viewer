@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import structured_data2 from "../lib/assets/backlog/raw/filtered3.json";
 import structured_data3 from "../lib/assets/backlog/current/filtered_index3.json";
 import "./Combined.css";
@@ -24,6 +24,10 @@ const CustomPDFViewer = (props: any) => {
   const [expanded, setExpanded] = useState<any>([]);
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
+  useEffect(() => {
+    console.log(data);
+  }, [data]);
+
   const handleOpen = (section: string) => {
     let temp = [...expanded];
     if (!temp.includes(section)) {
@@ -41,7 +45,7 @@ const CustomPDFViewer = (props: any) => {
     setExpanded(temp);
   };
 
-  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+  const handleClick = (event: React.MouseEvent<HTMLElement>, row_id: any) => {
     event.stopPropagation();
     setAnchorEl(event?.currentTarget);
     const element = event.currentTarget;
@@ -51,18 +55,18 @@ const CustomPDFViewer = (props: any) => {
     }
 
     element.classList.add("selected");
-    setCurElement(element);
+    setCurElement(row_id);
   };
 
   function handleDragDrop(result: any) {
     if (!result.destination) return;
     let { destination, draggableId, source } = result;
     console.log(destination, draggableId, source);
-    let newIndex = destination.index
-    let oldIndex = source.index
-    let newParent = parseInt(destination.droppableId.replace('area', ''));
-    let oldParent = parseInt(source.droppableId.replace('area', ''));
-    let curId = parseInt(draggableId.replace('section', ''));
+    let newIndex = destination.index;
+    let oldIndex = source.index;
+    let newParent = parseInt(destination.droppableId.replace("area", ""));
+    let oldParent = parseInt(source.droppableId.replace("area", ""));
+    let curId = parseInt(draggableId.replace("section", ""));
     let temp = [...data];
 
     temp = temp.map((row: any, index: number) => {
@@ -73,49 +77,45 @@ const CustomPDFViewer = (props: any) => {
     });
     // temp.sort((a: any, b: any) => a.index_id - b.index_id);
 
-    let oldChildren = getChild(temp, oldParent)
-    let newChildren = getChild(temp, newParent)
-
-
+    let oldChildren = getChild(temp, oldParent);
+    let newChildren = getChild(temp, newParent);
 
     temp = temp.map((row2: any) => {
-
       for (let i = 0; i < oldChildren.length; i++) {
         const row = oldChildren[i];
 
         if (row2.pdf_row_id === row.pdf_row_id) {
-          return { ...row2, index_id: i }
+          return { ...row2, index_id: i };
         }
       }
 
-      return row2
-    })
+      return row2;
+    });
 
     temp = temp.map((row2: any) => {
-
       for (let i = 0; i < newChildren.length; i++) {
         const row = newChildren[i];
 
         if (i === newIndex && row2.pdf_row_id === row.pdf_row_id) {
           if (row.pdf_row_id === curId) {
-            return { ...row2, index_id: newIndex }
+            return { ...row2, index_id: newIndex };
           } else {
-            return { ...row2, index_id: i + 1 }
+            return { ...row2, index_id: i + 1 };
           }
         }
 
         if (row2.pdf_row_id === row.pdf_row_id) {
-          return { ...row2, index_id: i }
+          return { ...row2, index_id: i };
         }
       }
 
-      return row2
-    })
+      return row2;
+    });
 
     // newChildren.map((row: any, index: any) => { return { ...row, index_id: index } })
 
     console.log(oldChildren, newParent, curId, temp);
-    setData(temp)
+    setData(temp);
   }
 
   const open = Boolean(anchorEl);
@@ -129,6 +129,8 @@ const CustomPDFViewer = (props: any) => {
         anchorEl={anchorEl}
         curElement={curElement}
         flag={true}
+        data={data}
+        setData={setData}
       />
       <div className={`page no1`} style={{ zIndex: 1 }}>
         <RenderSecion
@@ -140,6 +142,7 @@ const CustomPDFViewer = (props: any) => {
           expanded={expanded}
           handleClose={handleClose}
           handleOpen={handleOpen}
+          curElement={curElement}
           handleClick={handleClick}
           handleDragDrop={handleDragDrop}
         />
