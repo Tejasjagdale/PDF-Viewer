@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { Box, IconButton } from "@mui/material";
@@ -16,9 +16,11 @@ const RenderSection = (props: any) => {
     parentId,
     handleClose,
     handleOpen,
-    handleDragDrop,
     handleClick,
     curElement,
+    curText,
+    setCurText,
+    handleEdit
   } = props;
 
   return (
@@ -32,17 +34,13 @@ const RenderSection = (props: any) => {
           return (
             <div
               id={`section${row.pdf_row_id}`}
-              className={`item_sec ${
-                !expanded.includes(`section${row.pdf_row_id}`) &&
+              className={`item_sec ${!expanded.includes(`section${row.pdf_row_id}`) &&
                 getChild(data, row.pdf_row_id)?.length
-                  ? "parent_sec"
-                  : !expanded.includes(`section${row.parent_pdf_row_id}`)
+                ? "parent_sec"
+                : !expanded.includes(`section${row.parent_pdf_row_id}`)
                   ? "child_sec"
                   : ""
-              }`}
-              // style={{
-              //   backgroundColor: `${snapshot.isDragging ? "red" : ""}`,
-              // }}
+                }`}
             >
               <HtmlTagMapper
                 row={row}
@@ -53,6 +51,9 @@ const RenderSection = (props: any) => {
                 handleClick={handleClick}
                 curElement={curElement}
                 expanded={expanded}
+                curText={curText}
+                setCurText={setCurText}
+                handleEdit={handleEdit}
               />
 
               {!expanded.includes(`section${row.pdf_row_id}`) ? (
@@ -65,7 +66,7 @@ const RenderSection = (props: any) => {
                   parentId={row.pdf_row_id}
                   handleClick={handleClick}
                   curElement={curElement}
-                  handleDragDrop={handleDragDrop}
+                  handleEdit={handleEdit}
                 />
               ) : null}
             </div>
