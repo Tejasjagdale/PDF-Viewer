@@ -76,18 +76,27 @@ const Annotations = (props: any) => {
   const addChild = (id: any) => {
     let temp = [...data];
     let rowData: any = null;
-    temp.map((row: any) => {
-      if (row.pdf_row_id === id) {
-        rowData = row;
-      }
-    });
-    temp.sort((a, b) => a.pdf_row_id - b.pdf_row_id);
-    let lastEle: any = temp.at(-1);
+    let oldChildren = getChild(temp, id)
+    if (oldChildren.length) {
+      rowData = { ...oldChildren[0] }
+    } else {
+      temp.map((row: any) => {
+        if (row.pdf_row_id === id) {
+          rowData = { ...row };
+        }
+        return row;
+      });
+    }
 
-    rowData["pdf_row_id"] = lastEle.pdf_row_id + 1;
+
+    temp.sort((a, b) => a.pdf_row_id - b.pdf_row_id);
+    let newId: any = temp.at(-1).pdf_row_id + 1;
+
+    rowData["pdf_row_id"] = newId;
     rowData["Text"] = "write your text here...";
     rowData["parent_pdf_row_id"] = id;
     rowData["index_id"] = 0;
+    rowData["heading_level_dept"] = oldChildren.length ? rowData["heading_level_dept"] : rowData["heading_level_dept"] + 1
     // rowData["pdf_row_id"]
     // rowData["pdf_row_id"]
     // rowData["pdf_row_id"]
@@ -105,11 +114,83 @@ const Annotations = (props: any) => {
     // "Font.weight": 700,,
     // ,]
     temp.push(rowData)
-    // temp.sort((a, b) => a.index_id - b.index_id);
+
+    let newChildren: any = getChild(temp, id);
+    newChildren.sort((a: any, b: any) => a.index_id - b.index_id);
+
+    temp = temp.map((row2: any) => {
+      for (let i = 0; i < newChildren.length; i++) {
+        const row = newChildren[i];
+        if (row2.index_id !== 0 && row2.pdf_row_id === row.pdf_row_id) {
+          return { ...row2, index_id: i };
+        }
+
+        if (row2.index_id === 0 && row2.pdf_row_id === row.pdf_row_id) {
+
+          if (row.pdf_row_id === newId) {
+            return { ...row2, index_id: 0 };
+          } else {
+            return { ...row2, index_id: 1 };
+          }
+        }
+
+
+      }
+
+      return row2;
+    });
+
+    temp.sort((a, b) => a.index_id - b.index_id);
     setData(temp)
   };
 
-  const addSibling = () => {};
+  const addSibling = (id: any) => {
+    let temp = [...data];
+    let rowData: any = null;
+    temp.map((row: any) => {
+      if (row.pdf_row_id === id) {
+        rowData = { ...row };
+      }
+      return row;
+    });
+
+    temp.sort((a, b) => a.pdf_row_id - b.pdf_row_id);
+    let newId: any = temp.at(-1).pdf_row_id + 1;
+
+    rowData["pdf_row_id"] = newId;
+    rowData["Text"] = "write your text here...";
+
+    temp.push(rowData)
+
+    let newChildren: any = getChild(temp, rowData["parent_pdf_row_id"]);
+    newChildren.sort((a: any, b: any) => a.index_id - b.index_id);
+
+    temp = temp.map((row2: any) => {
+      for (let i = 0; i < newChildren.length; i++) {
+        const row = newChildren[i];
+        if(row2.pdf_row_id === row.pdf_row_id){
+          return { ...row2, index_id: i };
+        }
+        // if (row2.index_id !== rowData["parent_pdf_row_id"] && row2.pdf_row_id === row.pdf_row_id) {
+        //   return { ...row2, index_id: i };
+        // }
+
+        // if (row2.index_id === rowData["parent_pdf_row_id"] && row2.pdf_row_id === row.pdf_row_id) {
+
+        //   if (row.pdf_row_id === newId) {
+        //     return { ...row2, index_id: rowData["parent_pdf_row_id"]+1 };
+        //   } else {
+        //     return { ...row2, index_id: rowData["parent_pdf_row_id"] };
+        //   }
+        // }
+      }
+
+      return row2;
+    });
+
+    temp.sort((a, b) => a.index_id - b.index_id);
+    setData(temp)
+  };
 
   return (
     <>
@@ -273,6 +354,9 @@ const Annotations = (props: any) => {
                     aria-label="add to shopping cart"
                     size="small"
                     sx={{ fontSize: "12px" }}
+                    onClick={() => {
+                      addSibling(curElement)
+                    }}
                   >
                     <AddCircleOutlineOutlinedIcon
                       fontSize="inherit"
@@ -297,9 +381,8 @@ const Annotations = (props: any) => {
                 color: "#555555",
               }}
               onClick={() => {
-                props.curElement.style.paddingLeft = `${
-                  parseFloat(props.curElement.style.paddingLeft) - 5
-                }px`;
+                props.curElement.style.paddingLeft = `${parseFloat(props.curElement.style.paddingLeft) - 5
+                  }px`;
               }}
             >
               {props.flag ? (
@@ -329,9 +412,8 @@ const Annotations = (props: any) => {
                 color: "#555555",
               }}
               onClick={() => {
-                props.curElement.style.paddingLeft = `${
-                  parseFloat(props.curElement.style.paddingLeft) + 5
-                }px`;
+                props.curElement.style.paddingLeft = `${parseFloat(props.curElement.style.paddingLeft) + 5
+                  }px`;
               }}
             >
               {props.flag ? (

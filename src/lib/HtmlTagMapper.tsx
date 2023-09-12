@@ -10,7 +10,7 @@ const getTag = (props: any) => {
   let dept = row?.heading_level_dept;
   let Text = row.Text;
 
-  Text = `${row.index_id} ${Text}`;
+  Text = `${row.index_id} + ${row.pdf_row_id} + ${Text}`;
   const pattern = /^row\d+$/;
 
   switch (tagName) {
