@@ -63,7 +63,8 @@ export const HtmlTagMapper = (props: any) => {
     curElement,
     curText,
     setCurText,
-    handleEdit
+    handleEdit,
+    saveEdit,
   } = props;
   let tag = getTag(props);
 
@@ -76,8 +77,10 @@ export const HtmlTagMapper = (props: any) => {
         cursor: "pointer",
       }}
       // onContextMenu={(event:any)=>{event.preventDefault(); handleClick(event)}}
-      tabIndex={curElement === row.pdf_row_id ? -1 : 0}
-      onClick={(event: any) => { setCurText(row.Text); handleClick(event, row.pdf_row_id) }}
+      onClick={(event: any) => {
+        saveEdit(event, row);
+        handleClick(event, row.pdf_row_id);
+      }}
     >
       <div className="centerChild" style={{ width: "5%", height: "100%" }}>
         {isChild ? (
@@ -107,6 +110,11 @@ export const HtmlTagMapper = (props: any) => {
             id="outlined-basic"
             value={curText}
             onChange={handleEdit}
+            onKeyDown={(event: any) => {
+              if (event.key === "Enter" && !event.shiftKey) {
+                saveEdit(event, "save");
+              }
+            }}
             className="editField"
             style={{ fontSize: `11px` }}
           />

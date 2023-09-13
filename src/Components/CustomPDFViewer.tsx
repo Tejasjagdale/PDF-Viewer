@@ -19,8 +19,11 @@ import RenderSecion from "./RenderSection";
 import { getChild } from "../lib/PDFRestructure";
 
 const CustomPDFViewer = (props: any) => {
-  const [curText, setCurText] = useState("")
+  const _ = require("lodash");
+  const [curText, setCurText] = useState("");
+  const [updated, setUpdated] = useState([]);
   const [data, setData] = useState<any>(structured_data3);
+  const [backup, setBackup] = useState<any>([...data]);
   const [curElement, setCurElement] = useState<any>(null);
   const [expanded, setExpanded] = useState<any>([]);
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -46,48 +49,93 @@ const CustomPDFViewer = (props: any) => {
     setExpanded(temp);
   };
 
-  const handleBlur = (event: any) => {
-    if (!['button', 'textarea'].includes(event.relatedTarget?.nodeName?.toLowerCase())) {
-      const ele = document.getElementsByClassName("selected");
-      ele[0]?.removeEventListener('blur', () => true)
-      ele[0]?.classList.remove("selected");
-      setCurElement(null)
-      setAnchorEl(null)
-      let temp = [...data];
-      console.log(curElement);
-      
-      temp.map((row: any) => {
-        if (row.pdf_row_id === curElement) {
-          console.log("hello")
-          return { ...row, Text: curText }
-        }
-        return row;
-      })
-      setData(temp)
-    }
-
-  }
-
   const handleClick = (event: React.MouseEvent<HTMLElement>, row_id: any) => {
     event.stopPropagation();
     setAnchorEl(event?.currentTarget);
     const element = event.currentTarget;
     const ele = document.getElementsByClassName("selected");
     if (ele.length) {
-      ele[0]?.removeEventListener('blur', () => true)
       ele[0]?.classList?.remove("selected");
     }
 
     element?.classList.add("selected");
-    element.addEventListener('blur', handleBlur);
     setCurElement(row_id);
   };
 
   const handleEdit = (event: any) => {
+    setCurText(event.currentTarget.value);
+  };
 
-    setCurText(event.target.value)
+  const saveEdit = (event: any, row: any) => {
+    if (curElement || row === "save") {
+      let temp = [...data];
 
-  }
+      temp = temp.map((row: any) => {
+        if (row.pdf_row_id === curElement)
+          if (row.pdf_row_id === curElement) {
+            return { ...row, Text: curText };
+          }
+        return row;
+      });
+      setData(temp);
+    }
+
+    if (row === "save") {
+      setAnchorEl(null);
+      const ele = document.getElementsByClassName("selected");
+      if (ele.length) {
+        ele[0]?.classList?.remove("selected");
+      }
+      setCurElement(null);
+    }
+
+    if (row !== "save" && row?.pdf_row_id !== curElement) setCurText(row?.Text);
+  };
+
+  useEffect(()=>{
+    alert(curElement);
+  },[curElement])
+
+  const checkUpdated = (row: any, type: any) => {
+    let temp: any = [...backup];
+    let temp2: any = [...updated];
+
+    if (type === "delete") {
+      temp2 = temp2.filter((data: any) => data.pdf_row_id !== row.pdf_row_id);
+      temp2.push(row);
+    } else if (type === "update") {
+      temp2.map((data2: any) => {
+        if (data2.pdf_row_id === row.pdf_row_id) {
+          return { ...data2, data: { ...row } };
+        }
+        return;
+      });
+
+      temp.every((data: any) => {
+        if (data.pdf_row_id === row.pdf_row_id) {
+          let areEqual = _.isEqual(data, row);
+
+          temp2.map((data2: any) => {
+            if (data2.pdf_row_id === row.pdf_row_id) {
+              areEqual = false;
+            }
+            return;
+          });
+
+          if (!areEqual) {
+            temp2.push({ data: { ...row }, type: type });
+          }
+        }
+      });
+    } else {
+      temp2.push(row);
+    }
+    setUpdated(temp2);
+  };
+
+  useEffect(()=>{
+    console.log(updated)
+  },[updated])
 
   const open = Boolean(anchorEl);
   const id = open ? "simple-popper" : undefined;
@@ -102,6 +150,8 @@ const CustomPDFViewer = (props: any) => {
         flag={true}
         data={data}
         setData={setData}
+        saveEdit={saveEdit}
+        checkUpdated={checkUpdated}
       />
       <div className={`page no1`} style={{ zIndex: 1 }}>
         <RenderSecion
@@ -118,6 +168,7 @@ const CustomPDFViewer = (props: any) => {
           handleEdit={handleEdit}
           curText={curText}
           setCurText={setCurText}
+          saveEdit={saveEdit}
         />
       </div>
     </>

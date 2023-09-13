@@ -20,7 +20,8 @@ const RenderSection = (props: any) => {
     curElement,
     curText,
     setCurText,
-    handleEdit
+    handleEdit,
+    saveEdit,
   } = props;
 
   return (
@@ -34,13 +35,15 @@ const RenderSection = (props: any) => {
           return (
             <div
               id={`section${row.pdf_row_id}`}
-              className={`item_sec ${!expanded.includes(`section${row.pdf_row_id}`) &&
+              key={index}
+              className={`item_sec ${
+                !expanded.includes(`section${row.pdf_row_id}`) &&
                 getChild(data, row.pdf_row_id)?.length
-                ? "parent_sec"
-                : !expanded.includes(`section${row.parent_pdf_row_id}`)
+                  ? "parent_sec"
+                  : !expanded.includes(`section${row.parent_pdf_row_id}`)
                   ? "child_sec"
                   : ""
-                }`}
+              }`}
             >
               <HtmlTagMapper
                 row={row}
@@ -54,6 +57,7 @@ const RenderSection = (props: any) => {
                 curText={curText}
                 setCurText={setCurText}
                 handleEdit={handleEdit}
+                saveEdit={saveEdit}
               />
 
               {!expanded.includes(`section${row.pdf_row_id}`) ? (
@@ -67,6 +71,7 @@ const RenderSection = (props: any) => {
                   handleClick={handleClick}
                   curElement={curElement}
                   handleEdit={handleEdit}
+                  saveEdit={saveEdit}
                 />
               ) : null}
             </div>

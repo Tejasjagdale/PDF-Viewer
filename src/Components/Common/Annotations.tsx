@@ -24,12 +24,11 @@ interface QueueElement {
 }
 
 const Annotations = (props: any) => {
-  let { data, setData, curElement } = props;
+  let { data, setData, curElement,saveEdit,checkUpdated } = props;
 
   const deleteIndex = (data: any, parentId: any) => {
     let temp = [...data];
     let Children = getChild(temp, parentId);
-    console.log(Children);
 
     temp = temp.map((row2: any) => {
       for (let i = 0; i < Children.length; i++) {
@@ -47,19 +46,25 @@ const Annotations = (props: any) => {
   };
 
   const deleteRow = (id: any) => {
+    console.log(id)
     let temp = [...data];
     let parentId = -1;
     let level: any = new Queue();
     level.enqueue(id);
+    console.log(level.print())
     while (level.size()) {
+      id = level.peek()
+      console.log("check",id)
       temp = temp.filter((row: any) => {
         if (row.parent_pdf_row_id === id) {
           level.enqueue(row.pdf_row_id);
+          console.log(row.pdf_row_id)
           return false;
         }
 
         if (row.pdf_row_id === id) {
           parentId = row.parent_pdf_row_id;
+          console.log(row.pdf_row_id)
         }
 
         return row.pdf_row_id !== id;
@@ -171,18 +176,6 @@ const Annotations = (props: any) => {
         if(row2.pdf_row_id === row.pdf_row_id){
           return { ...row2, index_id: i };
         }
-        // if (row2.index_id !== rowData["parent_pdf_row_id"] && row2.pdf_row_id === row.pdf_row_id) {
-        //   return { ...row2, index_id: i };
-        // }
-
-        // if (row2.index_id === rowData["parent_pdf_row_id"] && row2.pdf_row_id === row.pdf_row_id) {
-
-        //   if (row.pdf_row_id === newId) {
-        //     return { ...row2, index_id: rowData["parent_pdf_row_id"]+1 };
-        //   } else {
-        //     return { ...row2, index_id: rowData["parent_pdf_row_id"] };
-        //   }
-        // }
       }
 
       return row2;
@@ -234,6 +227,7 @@ const Annotations = (props: any) => {
                     aria-label="Edit section"
                     size="small"
                     sx={{ fontSize: "12px" }}
+                    onClick={(event:any)=> saveEdit(event,'save')}
                   >
                     <EditIcon fontSize="inherit" color="primary" />
                   </IconButton>
