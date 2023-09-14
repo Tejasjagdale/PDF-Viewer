@@ -22,6 +22,7 @@ const CustomPDFViewer = (props: any) => {
   const _ = require("lodash");
   const [curText, setCurText] = useState("");
   const [updated, setUpdated] = useState([]);
+  const updatedRef = useRef(updated)
   const [data, setData] = useState<any>(structured_data3);
   const [backup, setBackup] = useState<any>([...data]);
   const [curElement, setCurElement] = useState<any>(null);
@@ -92,24 +93,29 @@ const CustomPDFViewer = (props: any) => {
     if (row !== "save" && row?.pdf_row_id !== curElement) setCurText(row?.Text);
   };
 
-  useEffect(()=>{
-    alert(curElement);
-  },[curElement])
+  useEffect(() => {
+    console.log(curElement);
+  }, [curElement])
 
   const checkUpdated = (row: any, type: any) => {
     let temp: any = [...backup];
-    let temp2: any = [...updated];
+    let temp2: any = [...updatedRef.current];
+    console.log("check", row, type, temp2)
 
     if (type === "delete") {
-      temp2 = temp2.filter((data: any) => data.pdf_row_id !== row.pdf_row_id);
-      temp2.push(row);
+      temp2 = temp2.filter((data: any) => data.data.pdf_row_id !== row.pdf_row_id);
+      temp2.push({data:row,type:type});
+      updatedRef.current = temp2
+
     } else if (type === "update") {
       temp2.map((data2: any) => {
-        if (data2.pdf_row_id === row.pdf_row_id) {
+        if (data2.data.pdf_row_id === row.pdf_row_id) {
           return { ...data2, data: { ...row } };
         }
-        return;
+        return data2;
       });
+      updatedRef.current = temp2
+
 
       temp.every((data: any) => {
         if (data.pdf_row_id === row.pdf_row_id) {
@@ -119,7 +125,7 @@ const CustomPDFViewer = (props: any) => {
             if (data2.pdf_row_id === row.pdf_row_id) {
               areEqual = false;
             }
-            return;
+            return data2;
           });
 
           if (!areEqual) {
@@ -127,15 +133,20 @@ const CustomPDFViewer = (props: any) => {
           }
         }
       });
+      updatedRef.current = temp2
     } else {
       temp2.push(row);
+      updatedRef.current = temp2
     }
+
+    console.log(temp2);
     setUpdated(temp2);
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     console.log(updated)
-  },[updated])
+    updatedRef.current = updated
+  }, [updated])
 
   const open = Boolean(anchorEl);
   const id = open ? "simple-popper" : undefined;

@@ -24,7 +24,7 @@ interface QueueElement {
 }
 
 const Annotations = (props: any) => {
-  let { data, setData, curElement,saveEdit,checkUpdated } = props;
+  let { data, setData, curElement, saveEdit, checkUpdated } = props;
 
   const deleteIndex = (data: any, parentId: any) => {
     let temp = [...data];
@@ -35,6 +35,7 @@ const Annotations = (props: any) => {
         const row = Children[i];
 
         if (row2.pdf_row_id === row.pdf_row_id) {
+          checkUpdated({ ...row2, index_id: i }, 'update')
           return { ...row2, index_id: i };
         }
       }
@@ -46,25 +47,24 @@ const Annotations = (props: any) => {
   };
 
   const deleteRow = (id: any) => {
-    console.log(id)
     let temp = [...data];
     let parentId = -1;
     let level: any = new Queue();
     level.enqueue(id);
-    console.log(level.print())
     while (level.size()) {
       id = level.peek()
-      console.log("check",id)
       temp = temp.filter((row: any) => {
         if (row.parent_pdf_row_id === id) {
           level.enqueue(row.pdf_row_id);
-          console.log(row.pdf_row_id)
+          // console.log("hello",row.pdf_row_id)
+          checkUpdated(row, 'delete')
           return false;
         }
 
         if (row.pdf_row_id === id) {
           parentId = row.parent_pdf_row_id;
-          console.log(row.pdf_row_id)
+          // console.log("hello",row.pdf_row_id)
+          checkUpdated(row, 'delete')
         }
 
         return row.pdf_row_id !== id;
@@ -173,7 +173,7 @@ const Annotations = (props: any) => {
     temp = temp.map((row2: any) => {
       for (let i = 0; i < newChildren.length; i++) {
         const row = newChildren[i];
-        if(row2.pdf_row_id === row.pdf_row_id){
+        if (row2.pdf_row_id === row.pdf_row_id) {
           return { ...row2, index_id: i };
         }
       }
@@ -227,7 +227,7 @@ const Annotations = (props: any) => {
                     aria-label="Edit section"
                     size="small"
                     sx={{ fontSize: "12px" }}
-                    onClick={(event:any)=> saveEdit(event,'save')}
+                    onClick={(event: any) => saveEdit(event, 'save')}
                   >
                     <EditIcon fontSize="inherit" color="primary" />
                   </IconButton>
