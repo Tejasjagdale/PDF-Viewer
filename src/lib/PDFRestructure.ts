@@ -172,6 +172,30 @@ export const getChild: any = (data: any, checkId: any) => {
   return data.filter((section: any) => section.parent_pdf_row_id === checkId);
 };
 
+export const getUniqueValues=(data:any)=> {
+  const result:any = {};
+
+  data.forEach((item:any) => {
+    for (const key in item) {
+      if (item.hasOwnProperty(key)) {
+        if (!result[key]) {
+          result[key] = new Set();
+        }
+        result[key].add(item[key]);
+      }
+    }
+  });
+
+  // Convert sets to arrays
+  for (const key in result) {
+    if (result.hasOwnProperty(key)) {
+      result[key] = Array.from(result[key]);
+    }
+  }
+
+  return result;
+}
+
 export const downloadJsonFile: any = (data: any, filename: any) => {
   const jsonBlob = new Blob([JSON.stringify(data)], {
     type: "application/json",

@@ -30,7 +30,7 @@ const Login = () => {
     }
     setExpanded(temp);
   };
-
+  
   const handleClose = (section: string) => {
     let temp = [...expanded];
     const index = temp.indexOf(section);

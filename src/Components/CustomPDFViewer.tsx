@@ -16,22 +16,25 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import Annotations from "./Common/Annotations";
 import CSSMapper from "../lib/CSSMapper";
 import RenderSecion from "./RenderSection";
-import { getChild } from "../lib/PDFRestructure";
+import { getChild, getUniqueValues } from "../lib/PDFRestructure";
+import RowEdit from "./Common/RowEdit";
 
 const CustomPDFViewer = (props: any) => {
+  const { updated, setUpdated } = props;
   const _ = require("lodash");
+  const [textDetails, setTextDetails] = useState(null);
   const [curText, setCurText] = useState("");
-  const [updated, setUpdated] = useState([]);
-  const updatedRef = useRef(updated)
+  const updatedRef = useRef(updated);
   const [data, setData] = useState<any>(structured_data3);
   const [backup, setBackup] = useState<any>([...data]);
   const [curElement, setCurElement] = useState<any>(null);
+  const [currRow, setCurrRow] = useState<any>(null);
   const [expanded, setExpanded] = useState<any>([]);
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
+  const [openModal, setOpenModal] = React.useState(false);
+  const handleModalOpen = () => setOpenModal(true);
+  const handleModalClose = () => setOpenModal(false);
 
   const handleOpen = (section: string) => {
     let temp = [...expanded];
@@ -74,6 +77,7 @@ const CustomPDFViewer = (props: any) => {
       temp = temp.map((row: any) => {
         if (row.pdf_row_id === curElement)
           if (row.pdf_row_id === curElement) {
+            checkUpdated({ ...row, Text: curText }, "update");
             return { ...row, Text: curText };
           }
         return row;
@@ -82,77 +86,120 @@ const CustomPDFViewer = (props: any) => {
     }
 
     if (row === "save") {
-      setAnchorEl(null);
-      const ele = document.getElementsByClassName("selected");
-      if (ele.length) {
-        ele[0]?.classList?.remove("selected");
-      }
-      setCurElement(null);
+      unSelect();
     }
 
     if (row !== "save" && row?.pdf_row_id !== curElement) setCurText(row?.Text);
   };
 
-  useEffect(() => {
-    console.log(curElement);
-  }, [curElement])
+  const updateChanges=(row:any,id:any)=>{
+  }
+
+  const unSelect = () => {
+    setAnchorEl(null);
+    const ele = document.getElementsByClassName("selected");
+    if (ele.length) {
+      ele[0]?.classList?.remove("selected");
+    }
+    setCurElement(null);
+  };
 
   const checkUpdated = (row: any, type: any) => {
     let temp: any = [...backup];
     let temp2: any = [...updatedRef.current];
-    console.log("check", row, type, temp2)
+    // console.log(type,row,temp2)
 
     if (type === "delete") {
-      temp2 = temp2.filter((data: any) => data.data.pdf_row_id !== row.pdf_row_id);
-      temp2.push({data:row,type:type});
-      updatedRef.current = temp2
+      unSelect();
 
+      let flag = true;
+      temp2 = temp2.filter((data: any) => {
+        if (data.data.pdf_row_id === row.pdf_row_id) {
+          flag = false;
+        }
+        return data.data.pdf_row_id !== row.pdf_row_id;
+      });
+      if (flag) {
+        temp2.push({ data: row, type: type });
+      }
+      updatedRef.current = temp2;
     } else if (type === "update") {
       temp2.map((data2: any) => {
+        // if element already exist replace
         if (data2.data.pdf_row_id === row.pdf_row_id) {
           return { ...data2, data: { ...row } };
         }
         return data2;
       });
-      updatedRef.current = temp2
 
+      updatedRef.current = temp2;
 
-      temp.every((data: any) => {
+      temp.map((data: any) => {
         if (data.pdf_row_id === row.pdf_row_id) {
-          let areEqual = _.isEqual(data, row);
+          let areEquale = _.isEqual(data, row);
 
           temp2.map((data2: any) => {
-            if (data2.pdf_row_id === row.pdf_row_id) {
-              areEqual = false;
+            if (data2.data.pdf_row_id === row.pdf_row_id) {
+              areEquale = true;
             }
             return data2;
           });
 
-          if (!areEqual) {
+          // console.log(areEquale,row.pdf_row_id)
+
+          if (!areEquale) {
             temp2.push({ data: { ...row }, type: type });
           }
         }
+        return data;
       });
-      updatedRef.current = temp2
+
+      updatedRef.current = temp2;
     } else {
-      temp2.push(row);
-      updatedRef.current = temp2
+      temp2.push({ data: { ...row }, type: type });
+      updatedRef.current = temp2;
     }
 
-    console.log(temp2);
+    // console.log(temp2);
     setUpdated(temp2);
   };
 
   useEffect(() => {
-    console.log(updated)
-    updatedRef.current = updated
-  }, [updated])
+    console.log(updated);
+    updatedRef.current = updated;
+  }, [updated]);
+
+  useEffect(() => {
+    console.log(data);
+    setTextDetails(getUniqueValues(data));
+  }, [data]);
+
+  useEffect(() => {
+    console.log(curElement);
+    data.map((row: any) => {
+      if (curElement === row.pdf_row_id) {
+        setCurrRow(row);
+      }
+      return row;
+    });
+  }, [curElement]);
+
+  useEffect(()=>{
+    console.log(currRow)
+  },[currRow])
 
   const open = Boolean(anchorEl);
   const id = open ? "simple-popper" : undefined;
 
   return (
     <>
+      <RowEdit
+        data={textDetails}
+        open={openModal}
+        handleModalClose={handleModalClose}
+        row={currRow}
+        setRow={setCurrRow}
+      />
       <Annotations
         id={id}
         open={open}
@@ -163,6 +210,7 @@ const CustomPDFViewer = (props: any) => {
         setData={setData}
         saveEdit={saveEdit}
         checkUpdated={checkUpdated}
+        handleModalOpen={handleModalOpen}
       />
       <div className={`page no1`} style={{ zIndex: 1 }}>
         <RenderSecion

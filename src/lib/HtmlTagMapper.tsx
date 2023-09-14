@@ -4,13 +4,13 @@ import DragIndicatorIcon from "@mui/icons-material/DragIndicator";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
-const getTag = (props: any) => {
+export const GetTag = (props: any) => {
   let { row, CSS } = props;
   let tagName = row.Path[0];
   let dept = row?.heading_level_dept;
   let Text = row.Text;
 
-  Text = `${row.index_id} + ${row.pdf_row_id} + ${Text}`;
+  Text = `${Text}`;
   const pattern = /^row\d+$/;
 
   switch (tagName) {
@@ -66,14 +66,14 @@ export const HtmlTagMapper = (props: any) => {
     handleEdit,
     saveEdit,
   } = props;
-  let tag = getTag(props);
+  let tag = GetTag(props);
 
   return (
     <div
       style={{
         display: "flex",
         zIndex: 20,
-        paddingLeft: `${isChild ? 0 : 28}px`,
+        paddingLeft: `${isChild ? 0 : 0}px`,
         cursor: "pointer",
       }}
       // onContextMenu={(event:any)=>{event.preventDefault(); handleClick(event)}}
@@ -82,7 +82,7 @@ export const HtmlTagMapper = (props: any) => {
         handleClick(event, row.pdf_row_id);
       }}
     >
-      <div className="centerChild" style={{ width: "5%", height: "100%" }}>
+      <div className="centerChild" style={{ width: "30px", height: "100%" }}>
         {isChild ? (
           expanded.includes(`section${row.pdf_row_id}`) ? (
             <IconButton

@@ -13,18 +13,20 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import AddIcon from "@mui/icons-material/Add";
+import SaveAsIcon from "@mui/icons-material/SaveAs";
 import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
 import BlockIcon from "@mui/icons-material/Block";
 import { IconButton, Stack, Tooltip } from "@mui/material";
 import Stack2 from "../../hooks/newStack";
 import Queue from "../../hooks/newQueue";
 import { getChild } from "../../lib/PDFRestructure";
+import SettingsIcon from "@mui/icons-material/Settings";
 interface QueueElement {
   id: number;
 }
 
 const Annotations = (props: any) => {
-  let { data, setData, curElement, saveEdit, checkUpdated } = props;
+  let { data, setData, curElement, saveEdit, checkUpdated, handleModalOpen } = props;
 
   const deleteIndex = (data: any, parentId: any) => {
     let temp = [...data];
@@ -35,7 +37,7 @@ const Annotations = (props: any) => {
         const row = Children[i];
 
         if (row2.pdf_row_id === row.pdf_row_id) {
-          checkUpdated({ ...row2, index_id: i }, 'update')
+          checkUpdated({ ...row2, index_id: i }, "update");
           return { ...row2, index_id: i };
         }
       }
@@ -52,19 +54,19 @@ const Annotations = (props: any) => {
     let level: any = new Queue();
     level.enqueue(id);
     while (level.size()) {
-      id = level.peek()
+      id = level.peek();
       temp = temp.filter((row: any) => {
         if (row.parent_pdf_row_id === id) {
           level.enqueue(row.pdf_row_id);
           // console.log("hello",row.pdf_row_id)
-          checkUpdated(row, 'delete')
+          checkUpdated(row, "delete");
           return false;
         }
 
         if (row.pdf_row_id === id) {
           parentId = row.parent_pdf_row_id;
           // console.log("hello",row.pdf_row_id)
-          checkUpdated(row, 'delete')
+          checkUpdated(row, "delete");
         }
 
         return row.pdf_row_id !== id;
@@ -81,9 +83,9 @@ const Annotations = (props: any) => {
   const addChild = (id: any) => {
     let temp = [...data];
     let rowData: any = null;
-    let oldChildren = getChild(temp, id)
+    let oldChildren = getChild(temp, id);
     if (oldChildren.length) {
-      rowData = { ...oldChildren[0] }
+      rowData = { ...oldChildren[0] };
     } else {
       temp.map((row: any) => {
         if (row.pdf_row_id === id) {
@@ -93,7 +95,6 @@ const Annotations = (props: any) => {
       });
     }
 
-
     temp.sort((a, b) => a.pdf_row_id - b.pdf_row_id);
     let newId: any = temp.at(-1).pdf_row_id + 1;
 
@@ -101,7 +102,9 @@ const Annotations = (props: any) => {
     rowData["Text"] = "write your text here...";
     rowData["parent_pdf_row_id"] = id;
     rowData["index_id"] = 0;
-    rowData["heading_level_dept"] = oldChildren.length ? rowData["heading_level_dept"] : rowData["heading_level_dept"] + 1
+    rowData["heading_level_dept"] = oldChildren.length
+      ? rowData["heading_level_dept"]
+      : rowData["heading_level_dept"] + 1;
     // rowData["pdf_row_id"]
     // rowData["pdf_row_id"]
     // rowData["pdf_row_id"]
@@ -118,7 +121,7 @@ const Annotations = (props: any) => {
     // "Font.subset": true,
     // "Font.weight": 700,,
     // ,]
-    temp.push(rowData)
+    temp.push(rowData);
 
     let newChildren: any = getChild(temp, id);
     newChildren.sort((a: any, b: any) => a.index_id - b.index_id);
@@ -127,26 +130,26 @@ const Annotations = (props: any) => {
       for (let i = 0; i < newChildren.length; i++) {
         const row = newChildren[i];
         if (row2.index_id !== 0 && row2.pdf_row_id === row.pdf_row_id) {
+          checkUpdated({ ...row2, index_id: i }, "update");
           return { ...row2, index_id: i };
         }
 
         if (row2.index_id === 0 && row2.pdf_row_id === row.pdf_row_id) {
-
           if (row.pdf_row_id === newId) {
+            checkUpdated({ ...row2, index_id: 0 }, "added");
             return { ...row2, index_id: 0 };
           } else {
+            checkUpdated({ ...row2, index_id: 1 }, "update");
             return { ...row2, index_id: 1 };
           }
         }
-
-
       }
 
       return row2;
     });
 
     temp.sort((a, b) => a.index_id - b.index_id);
-    setData(temp)
+    setData(temp);
   };
 
   const addSibling = (id: any) => {
@@ -165,7 +168,7 @@ const Annotations = (props: any) => {
     rowData["pdf_row_id"] = newId;
     rowData["Text"] = "write your text here...";
 
-    temp.push(rowData)
+    temp.push(rowData);
 
     let newChildren: any = getChild(temp, rowData["parent_pdf_row_id"]);
     newChildren.sort((a: any, b: any) => a.index_id - b.index_id);
@@ -174,6 +177,11 @@ const Annotations = (props: any) => {
       for (let i = 0; i < newChildren.length; i++) {
         const row = newChildren[i];
         if (row2.pdf_row_id === row.pdf_row_id) {
+          if (row.pdf_row_id === rowData.pdf_row_id) {
+            checkUpdated({ ...row2, index_id: i }, "added");
+          } else {
+            checkUpdated({ ...row2, index_id: i }, "updated");
+          }
           return { ...row2, index_id: i };
         }
       }
@@ -182,7 +190,7 @@ const Annotations = (props: any) => {
     });
 
     temp.sort((a, b) => a.index_id - b.index_id);
-    setData(temp)
+    setData(temp);
   };
 
   return (
@@ -227,9 +235,9 @@ const Annotations = (props: any) => {
                     aria-label="Edit section"
                     size="small"
                     sx={{ fontSize: "12px" }}
-                    onClick={(event: any) => saveEdit(event, 'save')}
+                    onClick={(event: any) => saveEdit(event, "save")}
                   >
-                    <EditIcon fontSize="inherit" color="primary" />
+                    <SaveAsIcon fontSize="inherit" color="primary" />
                   </IconButton>
                 </Tooltip>
               ) : (
@@ -350,7 +358,7 @@ const Annotations = (props: any) => {
                     size="small"
                     sx={{ fontSize: "12px" }}
                     onClick={() => {
-                      addSibling(curElement)
+                      addSibling(curElement);
                     }}
                   >
                     <AddCircleOutlineOutlinedIcon
@@ -375,10 +383,7 @@ const Annotations = (props: any) => {
                 // padding: "0px 2px",
                 color: "#555555",
               }}
-              onClick={() => {
-                props.curElement.style.paddingLeft = `${parseFloat(props.curElement.style.paddingLeft) - 5
-                  }px`;
-              }}
+              onClick={handleModalOpen}
             >
               {props.flag ? (
                 <Tooltip title="Move Left" arrow>
@@ -388,7 +393,7 @@ const Annotations = (props: any) => {
                     size="small"
                     sx={{ fontSize: "12px" }}
                   >
-                    <KeyboardBackspaceIcon fontSize="inherit" color="primary" />
+                    <SettingsIcon fontSize="inherit" color="primary" />
                   </IconButton>
                 </Tooltip>
               ) : (
@@ -397,38 +402,7 @@ const Annotations = (props: any) => {
                   gutterBottom
                   className="completeSpace centerChild"
                 >
-                  left
-                </Typography>
-              )}
-            </Box>
-            <Box
-              sx={{
-                // padding: "0px 2px",
-                color: "#555555",
-              }}
-              onClick={() => {
-                props.curElement.style.paddingLeft = `${parseFloat(props.curElement.style.paddingLeft) + 5
-                  }px`;
-              }}
-            >
-              {props.flag ? (
-                <Tooltip title="Move Right" arrow>
-                  <IconButton
-                    color="primary"
-                    aria-label="move right"
-                    size="small"
-                    sx={{ fontSize: "12px" }}
-                  >
-                    <ArrowRightAltIcon fontSize="inherit" color="primary" />
-                  </IconButton>
-                </Tooltip>
-              ) : (
-                <Typography
-                  variant="subtitle2"
-                  gutterBottom
-                  className="completeSpace centerChild"
-                >
-                  right
+                  setting
                 </Typography>
               )}
             </Box>
