@@ -1,23 +1,12 @@
-import React from "react";
 import Box from "@mui/material/Box";
 import Popper from "@mui/material/Popper";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
-import ListItemIcon from "@mui/material/ListItemIcon";
 import Typography from "@mui/material/Typography";
-import Divider from "@mui/material/Divider";
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
-import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
-import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import AddIcon from "@mui/icons-material/Add";
 import SaveAsIcon from "@mui/icons-material/SaveAs";
 import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
 import BlockIcon from "@mui/icons-material/Block";
 import { IconButton, Stack, Tooltip } from "@mui/material";
-import Stack2 from "../../hooks/newStack";
 import Queue from "../../hooks/newQueue";
 import { getChild } from "../../lib/PDFRestructure";
 import SettingsIcon from "@mui/icons-material/Settings";
@@ -235,7 +224,7 @@ const Annotations = (props: any) => {
                     aria-label="Edit section"
                     size="small"
                     sx={{ fontSize: "12px" }}
-                    onClick={(event: any) => saveEdit(event, "save")}
+                    onClick={saveEdit}
                   >
                     <SaveAsIcon fontSize="inherit" color="primary" />
                   </IconButton>
@@ -386,7 +375,7 @@ const Annotations = (props: any) => {
               onClick={handleModalOpen}
             >
               {props.flag ? (
-                <Tooltip title="Move Left" arrow>
+                <Tooltip title="Modify Row" arrow>
                   <IconButton
                     color="primary"
                     aria-label="add to shopping cart"

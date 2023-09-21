@@ -1,22 +1,25 @@
 import {
   Autocomplete,
   Box,
+  Button,
   Grid,
   Modal,
+  Stack,
   TextField,
   Typography,
 } from "@mui/material";
 import React, { useState } from "react";
 import HtmlTagMapper, { GetTag } from "../../lib/HtmlTagMapper";
+import CloseIcon from "@mui/icons-material/Close";
+import SaveIcon from "@mui/icons-material/Save";
 import CSSMapper from "../../lib/CSSMapper";
 
 function RowEdit(props: any) {
-  const { open, handleModalClose, data, row, setRow } = props;
+  const { open, handleModalClose, data, row, setRow, updateChanges } = props;
   console.log(row);
 
   // Function to update the data based on the key and value
   const updateData = (key: any, value: any) => {
-    console.log(key, value);
     setRow((prevData: any) => ({
       ...prevData,
       [key]: value,
@@ -35,7 +38,7 @@ function RowEdit(props: any) {
         <Box
           sx={{
             width: "60%",
-            height: "550px",
+            height: "600px",
             bgcolor: "white",
           }}
         >
@@ -44,13 +47,13 @@ function RowEdit(props: any) {
               <Box
                 sx={{
                   width: "60%",
-                  height: "120px",
+                  height: "100px",
                   marginTop: "20px",
                   padding: "20px",
                   marginLeft: "20%",
                   overflowY: "scroll",
-                  border:"1px solid black",
-                  boxShadow: "inset 0 0 5px #000"
+                  border: "1px solid black",
+                  boxShadow: "inset 0 0 5px #000",
                 }}
                 className="centerChild"
               >
@@ -76,7 +79,7 @@ function RowEdit(props: any) {
                   </Typography>
 
                   <Box
-                    sx={{ width: "100%", height: "330px", overflowY: "scroll" }}
+                    sx={{ width: "100%", height: "350px", overflowY: "scroll" }}
                   >
                     {row && data ? (
                       <Box
@@ -110,7 +113,7 @@ function RowEdit(props: any) {
                       </Box>
                     ) : null}
                     {data
-                      ? Object.entries(data).map(([key, values]) => {
+                      ? Object.entries(data).map(([key, values],index) => {
                           return (
                             <>
                               {key.includes("Font.") &&
@@ -118,10 +121,10 @@ function RowEdit(props: any) {
                                 <Box
                                   className="centerChild"
                                   sx={{ width: "100%", height: "50px" }}
+                                  key={index}
                                 >
                                   <Autocomplete
                                     disablePortal
-                                    key={key}
                                     size="small"
                                     id="combo-box-demo"
                                     options={values.map(
@@ -133,7 +136,7 @@ function RowEdit(props: any) {
                                         {...params}
                                         label={`${key.split("Font.")[1]}`}
                                         value={`${row[key]}`}
-                                        defaultValue={'null'}
+                                        defaultValue={"null"}
                                         onChange={(e) =>
                                           updateData(key, e.currentTarget.value)
                                         }
@@ -159,10 +162,10 @@ function RowEdit(props: any) {
                   </Typography>
 
                   <Box
-                    sx={{ width: "100%", height: "330px", overflowY: "scroll" }}
+                    sx={{ width: "100%", height: "350px", overflowY: "scroll" }}
                   >
                     {data
-                      ? Object.entries(data).map(([key, values]) => {
+                      ? Object.entries(data).map(([key, values],index) => {
                           values = Array.isArray(values)
                             ? values.map((value: any) => `${value}`)
                             : [];
@@ -173,6 +176,7 @@ function RowEdit(props: any) {
                                 <Box
                                   className="centerChild"
                                   sx={{ width: "100%", height: "50px" }}
+                                  key={index}
                                 >
                                   <Autocomplete
                                     disablePortal
@@ -201,6 +205,38 @@ function RowEdit(props: any) {
                   </Box>
                 </Grid>
               </Grid>
+            </Grid>
+            <Grid item md={12}>
+              <Box
+                sx={{ height: "50px", width: "100%" }}
+                className="centerRight"
+              >
+                <Stack direction="row">
+                  <Button
+                    variant="outlined"
+                    color="error"
+                    size="small"
+                    startIcon={<CloseIcon />}
+                    sx={{ marginRight: "10px" }}
+                    onClick={handleModalClose}
+                  >
+                    Cancel
+                  </Button>
+                  <Button
+                    variant="outlined"
+                    color="success"
+                    size="small"
+                    startIcon={<SaveIcon />}
+                    sx={{ marginRight: "30px" }}
+                    onClick={() => {
+                      updateChanges(row, row.pdf_row_id);
+                      handleModalClose();
+                    }}
+                  >
+                    Save
+                  </Button>
+                </Stack>
+              </Box>
             </Grid>
           </Grid>
         </Box>

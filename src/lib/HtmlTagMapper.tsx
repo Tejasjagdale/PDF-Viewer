@@ -62,9 +62,7 @@ export const HtmlTagMapper = (props: any) => {
     handleClick,
     curElement,
     curText,
-    setCurText,
     handleEdit,
-    saveEdit,
   } = props;
   let tag = GetTag(props);
 
@@ -76,9 +74,8 @@ export const HtmlTagMapper = (props: any) => {
         paddingLeft: `${isChild ? 0 : 0}px`,
         cursor: "pointer",
       }}
-      // onContextMenu={(event:any)=>{event.preventDefault(); handleClick(event)}}
+      id={`row${row.pdf_row_id}`}
       onClick={(event: any) => {
-        saveEdit(event, row);
         handleClick(event, row.pdf_row_id);
       }}
     >
@@ -88,7 +85,7 @@ export const HtmlTagMapper = (props: any) => {
             <IconButton
               aria-label="delete"
               size="small"
-              onClick={() => handleClose(`section${row.pdf_row_id}`)}
+              onClick={(e) =>{e.stopPropagation(); handleClose(`section${row.pdf_row_id}`)}}
             >
               <ChevronRightIcon fontSize="inherit" color="primary" />
             </IconButton>
@@ -96,7 +93,7 @@ export const HtmlTagMapper = (props: any) => {
             <IconButton
               aria-label="delete"
               size="small"
-              onClick={() => handleOpen(`section${row.pdf_row_id}`)}
+              onClick={(e) =>{e.stopPropagation(); handleOpen(`section${row.pdf_row_id}`)}}
             >
               <ExpandMoreIcon fontSize="inherit" color="primary" />
             </IconButton>
@@ -110,11 +107,6 @@ export const HtmlTagMapper = (props: any) => {
             id="outlined-basic"
             value={curText}
             onChange={handleEdit}
-            onKeyDown={(event: any) => {
-              if (event.key === "Enter" && !event.shiftKey) {
-                saveEdit(event, "save");
-              }
-            }}
             className="editField"
             style={{ fontSize: `11px` }}
           />

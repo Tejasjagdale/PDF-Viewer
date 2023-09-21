@@ -20,7 +20,7 @@ import { getChild, getUniqueValues } from "../lib/PDFRestructure";
 import RowEdit from "./Common/RowEdit";
 
 const CustomPDFViewer = (props: any) => {
-  const { updated, setUpdated } = props;
+  const { updated, setUpdated ,setPageNumber} = props;
   const _ = require("lodash");
   const [textDetails, setTextDetails] = useState(null);
   const [curText, setCurText] = useState("");
@@ -63,6 +63,7 @@ const CustomPDFViewer = (props: any) => {
     }
 
     element?.classList.add("selected");
+    updateChanges({ ...currRow, Text: curText }, curElement);
     setCurElement(row_id);
   };
 
@@ -70,30 +71,22 @@ const CustomPDFViewer = (props: any) => {
     setCurText(event.currentTarget.value);
   };
 
-  const saveEdit = (event: any, row: any) => {
-    if (curElement || row === "save") {
-      let temp = [...data];
-
-      temp = temp.map((row: any) => {
-        if (row.pdf_row_id === curElement)
-          if (row.pdf_row_id === curElement) {
-            checkUpdated({ ...row, Text: curText }, "update");
-            return { ...row, Text: curText };
-          }
-        return row;
-      });
-      setData(temp);
-    }
-
-    if (row === "save") {
-      unSelect();
-    }
-
-    if (row !== "save" && row?.pdf_row_id !== curElement) setCurText(row?.Text);
+  const saveEdit = () => {
+    updateChanges({ ...currRow, Text: curText }, curElement);
+    unSelect();
   };
 
-  const updateChanges=(row:any,id:any)=>{
-  }
+  const updateChanges = (rowUpdated: any, id: any) => {
+    let temp = [...data];
+    temp = temp.map((row: any) => {
+      if (row.pdf_row_id === curElement) {
+        checkUpdated(rowUpdated, "update");
+        return rowUpdated;
+      }
+      return row;
+    });
+    setData(temp);
+  };
 
   const unSelect = () => {
     setAnchorEl(null);
@@ -178,15 +171,22 @@ const CustomPDFViewer = (props: any) => {
     console.log(curElement);
     data.map((row: any) => {
       if (curElement === row.pdf_row_id) {
+
+        setPageNumber(row.Page+1)
         setCurrRow(row);
+        setCurText(row.Text);
       }
       return row;
     });
   }, [curElement]);
 
-  useEffect(()=>{
-    console.log(currRow)
-  },[currRow])
+  useEffect(() => {
+    console.log(curText);
+  }, [curText]);
+
+  useEffect(() => {
+    console.log(currRow);
+  }, [currRow]);
 
   const open = Boolean(anchorEl);
   const id = open ? "simple-popper" : undefined;
@@ -199,6 +199,7 @@ const CustomPDFViewer = (props: any) => {
         handleModalClose={handleModalClose}
         row={currRow}
         setRow={setCurrRow}
+        updateChanges={updateChanges}
       />
       <Annotations
         id={id}
@@ -226,8 +227,6 @@ const CustomPDFViewer = (props: any) => {
           handleClick={handleClick}
           handleEdit={handleEdit}
           curText={curText}
-          setCurText={setCurText}
-          saveEdit={saveEdit}
         />
       </div>
     </>

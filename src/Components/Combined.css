@@ -1,3 +1,5 @@
+
+
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
@@ -78,6 +80,6 @@ a {
   width: 90%;
   outline: none;
   border: none;
-  border-bottom: 2px solid #0B085B;
+  border-bottom: 2px solid var(--primary);
   background-color: #FBFFFF;
 }

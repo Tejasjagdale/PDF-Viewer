@@ -20,6 +20,7 @@ import Header from "../../Components/Common/Header";
 
 const Home = () => {
   const [sideBar, setSideBar] = useState(false);
+  const [pageNumber, setPageNumber] = useState(1);
   const [flag, setFlag] = useState(false);
   const [updated, setUpdated] = useState([]);
   const [open, setOpen] = React.useState(false);
@@ -46,7 +47,12 @@ const Home = () => {
 
   useEffect(() => {
     console.log(flag);
+    
   }, [flag]);
+
+  useEffect(()=>{
+    document.getElementById(`page_${pageNumber}`)?.scrollIntoView();
+  },[pageNumber])
 
   return (
     <>
@@ -130,11 +136,13 @@ const Home = () => {
             <Grid item md={sideBar ? 10 : 12} m={0}>
               <Grid container p={1} sx={{ height: "94vh" }}>
                 <Grid item md={6} sx={{ height: "100%", overflowY: "scroll" }}>
-                  <CustomPDFViewer updated={updated} setUpdated={setUpdated} />
+                  <CustomPDFViewer updated={updated} setUpdated={setUpdated} setPageNumber={setPageNumber}/>
                 </Grid>
                 <Grid item md={6} sx={{ height: "100%", overflowY: "scroll" }}>
                   {/* <CustomPDFViewer flag={false} /> */}
-                  <PDFViewer />
+                  <PDFViewer
+                    pageNumber={pageNumber}
+                  />
                   {/* <div id="adobe-dc-view" style={{width: "800px"}}></div> */}
                 </Grid>
               </Grid>

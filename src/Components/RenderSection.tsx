@@ -1,11 +1,5 @@
-import React, { useMemo, useState } from "react";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import { Box, IconButton } from "@mui/material";
 import HtmlTagMapper from "../lib/HtmlTagMapper";
 import CSSMapper from "../lib/CSSMapper";
-import DragIndicatorIcon from "@mui/icons-material/DragIndicator";
-import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import { getChild } from "../lib/PDFRestructure";
 
 const RenderSection = (props: any) => {
@@ -19,9 +13,7 @@ const RenderSection = (props: any) => {
     handleClick,
     curElement,
     curText,
-    setCurText,
     handleEdit,
-    saveEdit,
   } = props;
 
   return (
@@ -55,9 +47,7 @@ const RenderSection = (props: any) => {
                 curElement={curElement}
                 expanded={expanded}
                 curText={curText}
-                setCurText={setCurText}
                 handleEdit={handleEdit}
-                saveEdit={saveEdit}
               />
 
               {!expanded.includes(`section${row.pdf_row_id}`) ? (
@@ -71,7 +61,7 @@ const RenderSection = (props: any) => {
                   handleClick={handleClick}
                   curElement={curElement}
                   handleEdit={handleEdit}
-                  saveEdit={saveEdit}
+                  curText={curText}
                 />
               ) : null}
             </div>
